@@ -1,0 +1,21 @@
+{
+    "name": "Services",
+    "items" : [{
+        "title": "Small Event Catering",
+        "image": "./nicoisesalad.JPG",
+        "alt": "Small Event Catering",
+        "blurb": "Lorum ipsum"
+    },
+    {
+        "title": "Personal Chef",
+        "image": "./nicoisesalad.JPG",
+        "alt": "Personal Chef",
+        "blurb": "Lorum ipsum"
+    },
+    {
+        "title": "Classes",
+        "image": "./nicoisesalad.JPG",
+        "alt": "Classes",
+        "blurb": "Lorum ipsum"
+    }
+]}

@@ -1,0 +1,9 @@
+{
+    "slug": "/",
+    "title": "Discover Kitchen",
+    "subtitle": "Small Event Catering",
+    "about": "../about.json",
+    "services": "../services.json",
+    "menu": "../menu.json",
+    "contact": "../contact.json"
+}

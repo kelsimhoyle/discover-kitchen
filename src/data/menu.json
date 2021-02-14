@@ -1,0 +1,19 @@
+{"name" : "Menu",
+    "items": [
+    {
+        "title": "Small Event Catering",
+        "image": "./images/nicoisesalad.JPG",
+        "alt": "Small Event Catering"
+    },
+    {
+        "title": "Personal Chef",
+        "image": "./images/nicoisesalad.JPG",
+        "alt": "Personal Chef"
+    },
+    {
+        "title": "Classes",
+        "image": "./images/nicoisesalad.JPG",
+        "alt": "Classes"
+    }
+    ]  
+}
