@@ -3,12 +3,9 @@ const IMAGE_PATH = './src/images/';
 
 
 exports.createPages = ({ graphql, actions }) => {
-  const { createPage } = actions
-  const cardPageTemplate = path.resolve(`src/templates/cardpage.js`)
-  // Query for markdown nodes to use in creating pages.
-  // You can query for whatever data you want to create pages for e.g.
-  // products, portfolio items, landing pages, etc.
-  // Variables can be added as the second function parameter
+  const { createPage } = actions;
+  const cardPageTemplate = path.resolve(`src/templates/cardpage.js`);
+
   return graphql(`
   query {
     allPagesJson(filter: {title: {in: ["Services", "Menu"]}}) {
@@ -24,7 +21,7 @@ exports.createPages = ({ graphql, actions }) => {
               title
               image {
                 childImageSharp {
-                  fixed(width: 200) {
+                  fixed(width: 400, height: 350) {
                     base64
                     width
                     height
@@ -44,8 +41,6 @@ exports.createPages = ({ graphql, actions }) => {
       throw result.errors
     }
 
-  
-
     // Create blog post pages.
     result.data.allPagesJson.nodes.forEach(node => {
 
@@ -60,6 +55,6 @@ exports.createPages = ({ graphql, actions }) => {
         },
       })
     })
-  })
+  });
 }
 

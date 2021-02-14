@@ -1,5 +1,6 @@
 import React from "react";
 import styled from "styled-components";
+import { Link } from "gatsby";
 
 const Btn = styled.button`
   background-color: ${props => props.theme.colors.red};
@@ -33,8 +34,8 @@ const Btn = styled.button`
 `;
 
 
-const MainBtn = ({ children }) => {
-  return <Btn>{children}</Btn>
+const MainBtn = ({ children, href }) => {
+  return <Link to={href}><Btn>{children}</Btn></Link>
 };
 
 export default MainBtn;

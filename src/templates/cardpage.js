@@ -1,8 +1,8 @@
 import React from "react";
 import Card from "../components/card";
 import CardContainer from "../styles/cardcontainer";
-const CardPage = ({ pathContext }) => {
-    const { title, subtitle, data } = pathContext;
+const CardPage = ({ pageContext }) => {
+    const { title, subtitle, data } = pageContext;
 
     return (
         <>

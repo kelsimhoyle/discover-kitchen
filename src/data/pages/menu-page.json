@@ -2,5 +2,5 @@
     "slug": "/menu",
     "title": "Menu",
     "subtitle": "Specialties and Favorites",
-    "data": "../data/menu.json"
+    "data": "../menu.json"
 }
