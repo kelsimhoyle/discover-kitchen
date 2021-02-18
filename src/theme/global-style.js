@@ -52,6 +52,8 @@ export const GlobalStyle = createGlobalStyle`
     color: '#1a202c';
   }
   body {
+    position: relative;
+    min-height: 100vh;
     line-height: 1.5;
     letter-spacing: 0;
     background-color: '#f7fafc';

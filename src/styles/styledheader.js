@@ -21,10 +21,30 @@ const Header = styled.div`
   }
 `;
 
+const NavLinks = styled.div`
+  a {
+    color: #FFFF;
+    margin: .5rem 1rem;
+    padding-bottom: .5rem;
+    border-bottom: 2px solid #FFFF;
+    font-size: ${props => props.theme.fontSizes.small};
+    text-decoration: none;
+    text-transform: uppercase;
+  }
+
+  @media ${props => props.theme.device.laptop} {
+    width: 100vw;
+
+  }
+`;
+
+
 
 const StyledHeader = ({children}) => (
   <Header>
+    <NavLinks>
       {children}
+      </NavLinks>
   </Header>
   );
 

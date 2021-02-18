@@ -1,7 +1,20 @@
 import React from "react";
 import styled from "styled-components";
 
-const NavLinks = styled.div`
+const Footer = styled.footer`
+    width: 100vw;
+    margin-top: 10px;
+    position: absolute;
+    bottom: 0;
+    background-color: ${props => props.theme.colors.lightRed};
+
+    div {
+        width: 80vw;
+        margin: auto;
+
+        display: flex;
+        flex-direction: row;
+    }
   a {
     color: #FFFF;
     margin: .5rem 1rem;
@@ -19,10 +32,10 @@ const NavLinks = styled.div`
 `;
 
 
-const StyledNavLinks = ({children}) => (
-  <NavLinks>
+const StyledFooter = ({children}) => (
+  <Footer>
       {children}
-  </NavLinks>
+  </Footer>
   );
 
-export default StyledNavLinks;
+export default StyledFooter;

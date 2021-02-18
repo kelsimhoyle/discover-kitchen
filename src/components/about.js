@@ -4,7 +4,7 @@ import Img from "gatsby-image";
 import MainBtn from "../styles/mainbtn";
 import StyledAbout from "../styles/styledabout";
 
-const AboutComponent = ({ title, text, button, image }) => {
+const AboutComponent = ({ text, button, image }) => {
     return (
         <StyledAbout className="about">
             <Img
@@ -13,7 +13,7 @@ const AboutComponent = ({ title, text, button, image }) => {
                 objectPosition="50% 50%"
             />
             <div>
-                <h2>{title}</h2>
+                <h2>About Discover Kitchen</h2>
                 <p>{text}</p>
                 <MainBtn href={button.href}> {button.text} </MainBtn>
             </div>

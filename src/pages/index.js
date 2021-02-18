@@ -2,17 +2,35 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import Landing from "../components/landing";
 import AboutComponent from "../components/about";
-import ServicesComponent from "../components/services";
+import CardsComponent from "../components/cards";
 import Home from "../styles/home";
 
 const IndexPage = ({ data }) => {
-  console.log(data)
+  let { about, menu, services } = data.pagesJson;
+
+  console.log(menu)
+
+  about = about.childDataJson;
+  menu = menu.childDataJson;
+  services = services.childDataJson;
+
   return (
       <>
         <Landing />
         <Home>
-          {/* <AboutComponent />
-          <ServicesComponent /> */}
+           <AboutComponent 
+             text={about.text}
+             image={about.image}
+             button={about.button}
+           />
+          <CardsComponent
+            items={services.items}
+            title={services.name}
+           />
+          <CardsComponent
+            items={menu.items}
+            title={menu.name}
+            />
         </Home>
       </>
   )
@@ -44,6 +62,7 @@ export const HomeQuery = graphql`query {
     }
     services {
       childDataJson {
+        name
         items {
           alt
           blurb
@@ -64,6 +83,7 @@ export const HomeQuery = graphql`query {
     }
     menu {
       childDataJson {
+        name
         items {
           alt
           blurb
