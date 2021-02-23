@@ -5,12 +5,13 @@ import Header from "../components/header";
 import Footer from "../components/footer";
 
 const Container = styled.div`
-  padding-bottom: ${props => props.padding}
+  padding-bottom: ${props => props.padding};
+  background-color: ${props => props.theme.colors.blue};
 `
 
 const Layout = ({ children }) => {
   const [footerHeight, setHeight] = useState(0)
-  const padding = `${footerHeight + 20}px`
+  const padding = `${footerHeight + 300}px`
   
 
   return (

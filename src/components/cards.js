@@ -1,5 +1,4 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
 import Card from "./card";
 import Title from "./title";
 import MainBtn from "../styles/mainbtn";
@@ -8,14 +7,14 @@ import CardContainer from "../styles/cardcontainer"
 const CardsComponent = ({ title, subtitle, items, url }) => {
     return (
 
-        <div className={title}>
+        <div className={`${title} card-comp`}>
         <Title title={title} subtitle={ subtitle ? subtitle : ""} />
         <CardContainer>
             { items.map(item => (
                 <Card 
                     key={item.title}
                     title={item.title}
-                    fixed={item.image.childImageSharp.fixed}
+                    image={item.image}
                     alt={item.alt}
                     blurb={item.blurb}
                 />

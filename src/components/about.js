@@ -1,5 +1,4 @@
 import React from "react";
-import { StaticQuery, graphql } from "gatsby";
 import Img from "gatsby-image";
 import MainBtn from "../styles/mainbtn";
 import StyledAbout from "../styles/styledabout";
@@ -7,13 +6,17 @@ import StyledAbout from "../styles/styledabout";
 const AboutComponent = ({ text, button, image }) => {
     return (
         <StyledAbout className="about">
+        
             <Img
-                fixed={image.childImageSharp.fixed}
-                objectFit="cover"
-                objectPosition="50% 50%"
+                fluid={image.childImageSharp.fluid}
+                alt="Discover Kitchen Portrait"
+                // objectFit="cover"
+                // objectPosition="50% 50%"
             />
-            <div>
+            <div className="content">
+            <div class="title">
                 <h2>About Discover Kitchen</h2>
+                </div>
                 <p>{text}</p>
                 <MainBtn href={button.href}> {button.text} </MainBtn>
             </div>

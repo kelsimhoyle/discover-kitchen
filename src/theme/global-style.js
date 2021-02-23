@@ -57,6 +57,7 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     letter-spacing: 0;
     background-color: '#f7fafc';
+    color: #f8f8ff;
   }
 
   h1, h2, h3 {
@@ -64,10 +65,18 @@ export const GlobalStyle = createGlobalStyle`
   }
 
   h1, h2 {
-      font-size: ${theme.fontSizes.large};
-      letter-spacing: .5rem;
+    font-size: ${theme.fontSizes.large};
+    letter-spacing: .5rem;
     text-transform: uppercase;
     font-weight: bold;
+  }
+
+  h2 {
+    display: inline;
+    font-size: 1.75rem;
+    letter-spacing: .25rem;
+    padding: .25rem;
+    background: linear-gradient(180deg, rgba(200,29,37, 0) 0%, rgba(200,29,37, 0) 50%, rgba(200, 29, 37, 1) 50%, rgba(200,29,37, 1) 100%);
   }
 
    h3 {

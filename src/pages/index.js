@@ -49,12 +49,8 @@ export const HomeQuery = graphql`query {
         text
         image {
           childImageSharp {
-            fixed(height: 400, width: 300) {
-              base64
-              width
-              height
-              src
-              srcSet
+            fluid {
+              ...GatsbyImageSharpFluid
             }
           }
         }
@@ -69,12 +65,8 @@ export const HomeQuery = graphql`query {
           title
           image {
             childImageSharp {
-              fixed(height: 400, width: 300) {
-                base64
-                width
-                height
-                src
-                srcSet
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
           }
@@ -90,12 +82,8 @@ export const HomeQuery = graphql`query {
           title
           image {
             childImageSharp {
-              fixed(height: 400, width: 300) {
-                base64
-                width
-                height
-                src
-                srcSet
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
           }

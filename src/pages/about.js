@@ -1,20 +1,21 @@
 import React from "react";
 import { graphql } from "gatsby";
 import AboutComponent from "../components/about";
+import AboutPage from "../styles/aboutpage";
 
 const About = ({ data }) => {
     const { subtitle, data: info } = data.pagesJson;
     const {text, button, image } = info.childDataJson;
 
     return (
-        <>
+        <AboutPage>
         <AboutComponent 
             title={subtitle}
             text={text}
             button={button}
             image={image}
          />
-        </>
+        </AboutPage>
     )
 };
 
@@ -32,12 +33,8 @@ export const AboutQuery = graphql`query {
           text
           image {
             childImageSharp {
-              fixed(height: 400, width: 300) {
-                base64
-                width
-                height
-                src
-                srcSet
+              fluid {
+                ...GatsbyImageSharpFluid
               }
             }
           }

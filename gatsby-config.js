@@ -4,6 +4,7 @@ module.exports = {
     siteMetadata: {
         title: `Discover Kitchen`,
         description: `Small event catering in Denver, Colorado`,
+        image: "/images/DiscoverKitchen.png"
       },
     plugins: [
        `gatsby-plugin-styled-components`,

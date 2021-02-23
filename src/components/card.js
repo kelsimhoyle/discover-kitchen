@@ -2,12 +2,13 @@ import React from "react";
 import Img from "gatsby-image";
 import CardStyle from "../styles/card";
 
-const Card = ({ title, fixed, alt, blurb }) => {
+
+const Card = ({ title, image, alt, blurb }) => {
     return (
         <CardStyle>
             <h3>{title}</h3>
             <Img
-                fixed={fixed}
+                fluid={image.childImageSharp.fluid}
                 objectFit="cover"
                 objectPosition="50% 50%"
                 alt={alt}

@@ -2,10 +2,19 @@ import React from "react";
 import styled from "styled-components";
 
 const Div = styled.div`
-  width: 90vw;
-  
+  width: 90%;
+  margin-top: 2rem;
+  text-align: center;
+
+
   h3 {
       text-transform: uppercase;
+  }
+
+  button {
+    position: absolute;
+    left: 50%;
+    transform: translate(-50%);
   }
   
   img {
@@ -15,7 +24,7 @@ const Div = styled.div`
   }
 
   @media ${props => props.theme.device.laptop} {
-      width: 30vw;
+      width: 30%;
   }
 `;
 
