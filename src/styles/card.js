@@ -6,9 +6,13 @@ const Div = styled.div`
   margin-top: 2rem;
   text-align: center;
 
-
   h3 {
       text-transform: uppercase;
+      margin: 1rem;
+  }
+  
+  p {
+    margin: 1rem;
   }
 
   button {

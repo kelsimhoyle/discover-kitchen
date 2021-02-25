@@ -13,19 +13,31 @@ const Footer = styled.footer`
         display: flex;
         flex-direction: column;
     }
-  a {
-    color: #FFFF;
-    margin: 1rem .5rem;
-    padding-bottom: .5rem;
-    border-bottom: 2px solid #FFFF;
-    font-size: ${props => props.theme.fontSizes.medium};
-    text-decoration: none;
-    text-transform: uppercase;
-  }
 
-  li {
-      margin: .75rem;
-  }
+    .links {
+        a {
+            color: #FFFF;
+            margin: 1rem .5rem;
+            padding-bottom: .5rem;
+            border-bottom: 2px solid #FFFF;
+            font-size: ${props => props.theme.fontSizes.medium};
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+    }
+
+    li {
+        margin: .75rem;
+    }
+
+    h4 {
+        display: inline;
+        font-size: 1.5rem;
+        letter-spacing: .25rem;
+        padding: .25rem;
+        font-weight: bold;
+        background: ${props => props.theme.colors.red};
+    }
 
   .footer-links {
     div {

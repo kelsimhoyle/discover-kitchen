@@ -10,8 +10,8 @@ const Section = styled.section`
         background: linear-gradient(
     to bottom, 
     ${props => props.theme.colors.blue} 0%, 
-    ${props => props.theme.colors.blue} 75%, 
-    ${props => props.theme.colors.darkBlue} 25%, 
+    ${props => props.theme.colors.blue} 60%, 
+    ${props => props.theme.colors.darkBlue} 40%, 
     ${props => props.theme.colors.darkBlue} 100%
     );
     }
@@ -20,8 +20,8 @@ const Section = styled.section`
         background: linear-gradient(
     to bottom, 
     ${props => props.theme.colors.darkBlue} 0%, 
-    ${props => props.theme.colors.darkBlue} 75%, 
-    ${props => props.theme.colors.blue} 25%, 
+    ${props => props.theme.colors.darkBlue} 60%, 
+    ${props => props.theme.colors.blue} 40%, 
     ${props => props.theme.colors.blue} 100%
     );
     }

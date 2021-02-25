@@ -13,6 +13,7 @@ exports.createPages = ({ graphql, actions }) => {
         title
         subtitle
         slug
+        content
         data {
           childDataJson {
             items {
@@ -21,12 +22,12 @@ exports.createPages = ({ graphql, actions }) => {
               title
               image {
                 childImageSharp {
-                  fixed(width: 400, height: 350) {
+                  fluid {
                     base64
-                    width
-                    height
+                    aspectRatio
                     src
                     srcSet
+                    sizes
                   }
                 }
               }
@@ -51,6 +52,7 @@ exports.createPages = ({ graphql, actions }) => {
         context: {
             "title": node.title,
             "subtitle": node.subtitle,
+            "content": node.content,
             "data": node.data.childDataJson.items
         },
       })

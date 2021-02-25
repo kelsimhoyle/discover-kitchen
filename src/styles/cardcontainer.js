@@ -10,6 +10,10 @@ const FlexDiv = styled.div`
   overflow: hidden;
   min-width: 0;
 
+  h2 {
+    margin: .5rem 2rem;
+  }
+
   @media ${props => props.theme.device.laptop} {
       flex-direction: row;
       flex-wrap: wrap;

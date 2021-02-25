@@ -2,5 +2,6 @@
     "slug": "/services",
     "title": "Services",
     "subtitle": "How can we help you?",
+    "content": "Full list and description of services coming soon",
     "data": "../services.json"
 }

@@ -15,7 +15,7 @@ const Card = ({ title, image, alt, blurb }) => {
             />
             { blurb ? (
                 <div>
-                    {blurb}
+                    <p>{blurb}</p>
                 </div>
             ) : null }
         </CardStyle>

@@ -14,7 +14,7 @@ const AboutComponent = ({ text, button, image }) => {
                 // objectPosition="50% 50%"
             />
             <div className="content">
-            <div class="title">
+            <div className="title">
                 <h2>About Discover Kitchen</h2>
                 </div>
                 <p>{text}</p>

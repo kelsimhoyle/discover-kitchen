@@ -24,7 +24,7 @@ const NavLinks = () => {
     return (
        <Links>
         {pages.map(page => (
-            <Link to={`/${page == "home" ? "" : page}`} key={page}>{page}</Link>
+            <Link to={`/${page === "home" ? "" : page}`} key={page}>{page}</Link>
         ))}
        </Links>
     )

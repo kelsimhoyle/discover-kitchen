@@ -12,7 +12,7 @@ const Footer = ({ setHeight }) => {
         // when we get the height, then we will change the padding on global styles
         setHeight(height);
         console.log(height)
-    }, [footerRef]);
+    }, [footerRef, setHeight]);
 
 
     return (
@@ -26,18 +26,16 @@ const Footer = ({ setHeight }) => {
                 
                 <div className="footer-links">
                     <div>
-                        <p>Contact</p>
-                        <ul>
-                            <li>phone</li>
-                            <li>email</li>
-                            <li>instagram</li>
-                            <li>facebook</li>
-                            <li>Schedule Consultation</li>
+                        <h4>Contact</h4>
+                        <ul className="links">
+                            <li><a href="#" target="_blank"> email</a></li>
+                            <li><a href="#" target="_blank">instagram</a></li>
+                            <li><a href="#" target="_blank">facebook</a></li>
                         </ul>
                     </div>
                     <div>
-                    <p>Site Links</p>
-                        <ul>
+                    <h4>Site Links</h4>
+                        <ul className="links">
                             <li><Link to="/">Home</Link></li>
                             <li><Link to="/about">About</Link></li>
                             <li><Link to="/services">Services</Link></li>

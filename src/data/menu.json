@@ -7,12 +7,12 @@
     },
     {
         "title": "Item 2",
-        "image": "./images/nicoisesalad.JPG",
+        "image": "./images/bright-salad.JPG",
         "alt": "Item 2"
     },
     {
         "title": "Item 3",
-        "image": "./images/nicoisesalad.JPG",
+        "image": "./images/salmon.jpg",
         "alt": "Item 3"
     }
     ]  
