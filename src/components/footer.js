@@ -20,10 +20,7 @@ const Footer = ({ setHeight }) => {
         <StyledFooter >
             <div ref={footerRef}>
                     <img src={K} alt="Discover Kitcehn" />
-                    <div className="schedule">
-                        <MainBtn>Schedule Consultation</MainBtn>
-                    </div>
-                
+                    <div className="footer-content">
                 <div className="footer-links">
                     <div>
                         <h4>Contact</h4>
@@ -43,6 +40,10 @@ const Footer = ({ setHeight }) => {
                         </ul>
                     </div>
                 </div>
+                <div className="schedule">
+                        <MainBtn>Schedule Consultation</MainBtn>
+                    </div>
+                    </div>
             </div>
         </StyledFooter>
     )

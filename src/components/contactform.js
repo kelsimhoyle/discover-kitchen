@@ -2,14 +2,19 @@ import React, { useState } from "react";
 import styled from "styled-components";
 
 const Form = styled.div`
-        width: 40vw;
-        padding: 5vw;
-        background-color: ${props => props.theme.colors.lightRed};
-        border-radius: .5rem;
+    width: 90vw;
+    padding: 5vw;
+    margin: 2.5vw;    
+    background-color: rgba(255,255,255,0.2);
+    border-radius: .5rem;
     margin: auto;
     display: flex; 
     flex-direction: column;
     align-items: center;
+
+    h3 {
+        font-weight: bold;
+    }
 
 fieldset {
     display: flex;
@@ -18,6 +23,7 @@ fieldset {
     width: 100%;
 
     div {
+        width: 80%;
         margin: .5rem;
     }
 
@@ -34,8 +40,12 @@ fieldset {
     input, textarea, select {
         width: 70%
         }
+    }
 
-}
+@media ${props => props.theme.device.laptop} {
+            width: 40vw;
+            padding: 1rem;
+        }
 `
 
 const ContactForm = () => {
@@ -57,6 +67,9 @@ const ContactForm = () => {
     return (
         <form method="post">
             <Form>
+            <label>
+                <h3> Contact</h3>
+            </label>
                 <fieldset>
                     <div>
                         <label for="name">

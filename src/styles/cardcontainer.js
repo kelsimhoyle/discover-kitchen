@@ -23,7 +23,7 @@ const FlexDiv = styled.div`
 `;
 
 const CardContainer = ({ children}) => (
-  <FlexDiv>{children}</FlexDiv>
+  <FlexDiv className="cardContainer">{children}</FlexDiv>
   );
 
 export default CardContainer;

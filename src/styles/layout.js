@@ -11,7 +11,7 @@ const Container = styled.div`
 
 const Layout = ({ children }) => {
   const [footerHeight, setHeight] = useState(0)
-  const padding = `${footerHeight + 250}px`
+  const padding = `${footerHeight + 300}px`
   
 
   return (

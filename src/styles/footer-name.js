@@ -18,8 +18,10 @@ const Name = styled.div`
 
     @media ${props => props.theme.device.laptop} {
         width: 0;
+        
         img {
-            left: 10%;
+              left: 15%;
+              top: -50px;
         }
 
   }

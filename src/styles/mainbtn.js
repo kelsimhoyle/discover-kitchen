@@ -35,7 +35,7 @@ const Btn = styled.button`
 
 
 const MainBtn = ({ children, href }) => {
-  return <Link to={href}><Btn>{children}</Btn></Link>
+  return <Link to={href} className="btn"><Btn>{children}</Btn></Link>
 };
 
 export default MainBtn;

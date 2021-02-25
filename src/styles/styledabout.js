@@ -8,8 +8,6 @@ const Div = styled.div`
     padding: 2.5rem 1rem;
     color: #FFFFFF;
 
-    
-
     .content {
         padding: 1rem;
     }
@@ -19,6 +17,7 @@ const Div = styled.div`
         top: .5rem;
         z-index: 5;
     }
+
     h2 {
         display: inline;
         font-size: 1.75rem;

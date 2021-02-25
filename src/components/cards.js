@@ -8,23 +8,25 @@ const CardsComponent = ({ title, subtitle, items, url }) => {
     return (
 
         <div className={`${title} card-comp`}>
-        <Title title={title} subtitle={ subtitle ? subtitle : ""} />
-        <CardContainer>
-            { items.map(item => (
-                <Card 
-                    key={item.title}
-                    title={item.title}
-                    image={item.image}
-                    alt={item.alt}
-                    blurb={item.blurb}
-                />
-            ))}
-        </CardContainer>
+            <div className="container">
+                <Title title={title} subtitle={subtitle ? subtitle : ""} />
+                <CardContainer>
+                    {items.map(item => (
+                        <Card
+                            key={item.title}
+                            title={item.title}
+                            image={item.image}
+                            alt={item.alt}
+                            blurb={item.blurb}
+                        />
+                    ))}
+                </CardContainer>
 
-        <MainBtn href={url ? url : (`/${title.toLowerCase()}`)}>View More</MainBtn>
+                <MainBtn href={url ? url : (`/${title.toLowerCase()}`)}>View More</MainBtn>
+            </div>
         </div>
     )
-    
+
 };
 
 export default CardsComponent;

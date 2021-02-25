@@ -27,6 +27,7 @@ const ContactItems = styled.div`
 const Connect = styled.div`
     background: ${props => props.theme.colors.red};
     border-radius: .5rem;
+    margin: 1rem;
 
     h3 {
         text-align: center;

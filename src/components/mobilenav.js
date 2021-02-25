@@ -26,9 +26,9 @@ const MobileNavList = styled.nav`
 `
 
 const Icon = styled.div`
-    position: absolute;
-  top: 2%;
-  right: 3%;
+  position: absolute;
+  top: 2rem;
+  right: 2rem;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
