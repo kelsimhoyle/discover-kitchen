@@ -18,7 +18,9 @@ export const theme = {
       lightRed: "#ff5a5f",
       lightBlue: "#a8dadc",
       blue: "#457b9d",
-      darkBlue: "#1d3557"
+      darkBlue: "#1d3557",
+      darkGrey: "#101010",
+      lightGrey: "#88929c"
     },
     fonts: ["sans-serif", "Roboto"],
     fontSizes: {
@@ -56,8 +58,8 @@ export const GlobalStyle = createGlobalStyle`
     min-height: 100vh;
     line-height: 1.5;
     letter-spacing: 0;
-    background-color: '#f7fafc';
-    color: #f8f8ff;
+    background-color: white;
+    color: ${theme.colors.darkGrey};
   }
 
   h1, h2, h3 {
@@ -76,7 +78,7 @@ export const GlobalStyle = createGlobalStyle`
     font-size: 1.75rem;
     letter-spacing: .25rem;
     padding: .25rem;
-    background: linear-gradient(180deg, rgba(200,29,37, 0) 0%, rgba(200,29,37, 0) 50%, rgba(200, 29, 37, 1) 50%, rgba(200,29,37, 1) 100%);
+    background: linear-gradient(180deg, rgba(255,90,95, 0) 0%, rgba(255,90,95, 0) 50%, rgba(255,90,95, 1) 50%, rgba(255,90,95, 1) 100%);
   }
 
    h3 {

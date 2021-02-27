@@ -12,12 +12,12 @@
     "start": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
-    "clean": "gatsby clean",
-    "storybook": "start-storybook -p 6006",
-    "build-storybook": "build-storybook"
+    "clean": "gatsby clean"
   },
   "dependencies": {
     "@react-icons/all-files": "^4.1.0",
+    "bulma": "^0.9.2",
+    "bulma-carousel": "^4.0.24",
     "gatsby": "^2.26.1",
     "gatsby-image": "^2.11.0",
     "gatsby-plugin-layout": "^1.10.0",
@@ -33,17 +33,13 @@
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
     "react-icons": "^4.2.0",
+    "sass": "^1.32.8",
     "sass-loader": "^10.1.1",
     "styled-components": "^5.2.1",
     "styled-reset": "^4.3.4"
   },
   "devDependencies": {
     "@babel/core": "^7.12.10",
-    "@storybook/addon-actions": "^6.1.16",
-    "@storybook/addon-essentials": "^6.1.20",
-    "@storybook/addon-links": "^6.1.16",
-    "@storybook/addon-viewport": "^6.1.16",
-    "@storybook/react": "^6.1.20",
     "babel-loader": "^8.2.2",
     "babel-preset-react-app": "^10.0.0"
   }

@@ -21,13 +21,19 @@ const Links = styled.div`
 `;
 
 const NavLinks = () => {
-    return (
-       <Links>
-        {pages.map(page => (
-            <Link to={`/${page === "home" ? "" : page}`} key={page}>{page}</Link>
-        ))}
-       </Links>
-    )
+  return (
+    <>
+      {pages.map(page => (
+        <Link
+          to={`/${page === "home" ? "" : page}`}
+          key={page}
+          className="navbar-item"
+        >
+          {page}
+        </Link>
+      ))}
+    </>
+  )
 };
 
 export default NavLinks;

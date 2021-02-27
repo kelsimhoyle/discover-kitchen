@@ -1,26 +1,45 @@
-import React, { useRef, useEffect } from "react";
+import React from "react";
 import { Link } from "gatsby";
-import StyledFooter from "../styles/styledfooter";
-import MainBtn from "../styles/mainbtn";
 import K from "../images/K.png"
 
-const Footer = ({ setHeight }) => {
-    const footerRef = useRef(null);
-
-    useEffect(() => {
-        const height = footerRef.current.offsetHeight;
-        // when we get the height, then we will change the padding on global styles
-        setHeight(height);
-        console.log(height)
-    }, [footerRef, setHeight]);
-
+const Footer = () => {
 
     return (
+        <>
 
-        <StyledFooter >
-            <div ref={footerRef}>
-                    <img src={K} alt="Discover Kitcehn" />
-                    <div className="footer-content">
+            <footer className="footer">
+                <div className="columns has-text-centered">
+                    <div className="column">
+                        <img src={K} alt="Discover Kitchen" className="footer-img" />
+                    </div>
+                    <div className="column is-three-quarters">
+                        <div className="columns">
+                            <div className="column">
+                                <h4>Site Links</h4>
+                                <ul className="links">
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/about">About</Link></li>
+                                    <li><Link to="/services">Services</Link></li>
+                                    <li><Link to="/menu">Menu</Link></li>
+                                </ul>
+                            </div>
+                            <div className="column">
+                                <h4>Site Links</h4>
+                                <ul className="links">
+                                    <li><Link to="/">Home</Link></li>
+                                    <li><Link to="/about">About</Link></li>
+                                    <li><Link to="/services">Services</Link></li>
+                                    <li><Link to="/menu">Menu</Link></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </footer>
+
+            {/* <StyledFooter >
+            <div ref={footerRef} className=>
+                    <img src={K} alt="Discover Kitchen" />
                 <div className="footer-links">
                     <div>
                         <h4>Contact</h4>
@@ -44,8 +63,8 @@ const Footer = ({ setHeight }) => {
                         <MainBtn>Schedule Consultation</MainBtn>
                     </div>
                     </div>
-            </div>
-        </StyledFooter>
+        </StyledFooter> */}
+        </>
     )
 };
 

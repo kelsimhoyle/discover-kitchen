@@ -2,25 +2,30 @@ import React from "react";
 import styled from "styled-components";
 
 const Landing = styled.div`
-    width: 100vw;
-    height: 100vh;
-    overflow: hidden;
     position: relative;
+    margin-bottom: 150px;
 
-    img {
+    .image {
+        width: 100vw;
+        height: 80vh;
+        overflow: hidden;
+    }
+    ${'' /* img {
         width: 100%;
         height: auto;
         
-    }
+    } */}
 
-    div {
-        background-color: rgba(255, 255, 255, 0.5);
-        padding: 3rem;
+    .landing-text {
         position: absolute;            
-        top: 50%;   
-        left: 50%;                      
-        transform: translate(-50%, -50%);
-    }
+        bottom: -100px;   
+        left: 50%;         
+        z-index: 5;         
+        transform: translate(-50%);
+        -webkit-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	-moz-box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+	box-shadow:0 0 10px rgba(0, 0, 0, 0.5);
+        }
 
 `;
 

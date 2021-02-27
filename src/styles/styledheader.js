@@ -2,9 +2,9 @@ import React from "react";
 import styled from "styled-components";
 
 const Header = styled.div`
-    background-color: ${props => props.theme.colors.darkBlue};
-    padding: 2rem;
-
+    background-color: white;
+    max-width: 80vw;
+    padding: 1rem 10vw;
 
     img {
       width: 200px;
@@ -13,12 +13,11 @@ const Header = styled.div`
   
   h2 {
       text-transform: uppercase;
-      color: #FFFF;
   }
 
   a {
-    color: #FFFF;
     text-decoration: none;
+    color: ${props => props.theme.colors.darkGrey};
   }
 
   @media ${props => props.theme.device.laptop} {

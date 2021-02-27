@@ -6,7 +6,6 @@ const Div = styled.div`
     position: relative;
     margin: auto;
     padding: 2.5rem 1rem;
-    color: #FFFFFF;
 
     .content {
         padding: 1rem;
@@ -22,7 +21,7 @@ const Div = styled.div`
         display: inline;
         font-size: 1.75rem;
         letter-spacing: .25rem;
-        background: linear-gradient(180deg, rgba(200,29,37, 0) 0%, rgba(200,29,37, 0) 60%, rgba(200, 29, 37, 1) 60%, rgba(200,29,37, 1) 100%);
+        background: linear-gradient(180deg, rgba(255,90,95, 0) 0%, rgba(255,90,95, 0) 60%, rgba(255,90,95, 1) 60%, rgba(255,90,95, 1) 100%);
 
     }
 
@@ -42,7 +41,6 @@ const Div = styled.div`
             div {
                 width: 50%;
                 margin-left: 5%;
-                color: #FFFFFF;
                 line-height: 2;
                 font-size: ${props => props.theme.fontSizes.small};
                 

@@ -18,14 +18,17 @@ const Landing = () => (
       `}
         render={data => (
             <StyledLanding>
-            <Img 
-                fixed={data.file.childImageSharp.fixed}
-                objectFit="cover"
-                objectPosition="50% 50%" 
-            />
-            <div>
-                <h1>Discover Kitchen</h1>
-            </div>
+                <div className="image">
+                <Img
+                    fixed={data.file.childImageSharp.fixed}
+                    objectFit="cover"
+                    objectPosition="50% 50%"
+                />
+                </div>
+                <div className="landing-text box">
+                    <h1>Discover Kitchen</h1>
+                    <p>Discover Kitchen is a Denver based personal chef and small businesses catering......</p>
+                </div>
             </StyledLanding>
         )}
     />

@@ -1,6 +1,5 @@
 import React from "react";
 import Img from "gatsby-image";
-import MainBtn from "../styles/mainbtn";
 import StyledAbout from "../styles/styledabout";
 
 const AboutComponent = ({ text, button, image }) => {
@@ -18,7 +17,7 @@ const AboutComponent = ({ text, button, image }) => {
                 <h2>About Discover Kitchen</h2>
                 </div>
                 <p>{text}</p>
-                <MainBtn href={button.href}> {button.text} </MainBtn>
+                {/* <MainBtn href={button.href}> {button.text} </MainBtn> */}
             </div>
         </StyledAbout>
     )

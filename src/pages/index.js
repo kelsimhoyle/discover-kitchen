@@ -1,9 +1,10 @@
 import * as React from "react";
 import { graphql } from "gatsby";
+import "../styles/mystyles.scss";
 import Landing from "../components/landing";
 import AboutComponent from "../components/about";
 import CardsComponent from "../components/cards";
-import Home from "../styles/home";
+import ReviewCarousel from "../components/reviewcarousel";
 
 const IndexPage = ({ data }) => {
   let { about, menu, services } = data.pagesJson;
@@ -17,21 +18,25 @@ const IndexPage = ({ data }) => {
   return (
       <>
         <Landing />
-        <Home>
-           <AboutComponent 
+        <div className="container">
+           {/* <AboutComponent 
              text={about.text}
              image={about.image}
              button={about.button}
-           />
+           /> */}
+
           <CardsComponent
             items={services.items}
             title={services.name}
            />
+
+           <ReviewCarousel />
+
           <CardsComponent
             items={menu.items}
             title={menu.name}
             />
-        </Home>
+        </div>
       </>
   )
 }

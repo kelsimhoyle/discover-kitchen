@@ -3,11 +3,11 @@ import styled, { createGlobalStyle } from "styled-components"
 import NavLinks from "./navlinks";
 
 const MobileNavList = styled.nav`
-    background: ${props => props.theme.colors.red};
+  background-color: white;
     height: 100vh;
     width: 100vw;
     text-align: center;
-    position: absolute;
+    position: fixed;
     top: 0;
     left: 0;
     transition: transform 0.3s ease-in-out;
@@ -26,6 +26,7 @@ const MobileNavList = styled.nav`
 `
 
 const Icon = styled.div`
+  border-color: ${props => props.theme.colors.darkGrey};
   position: absolute;
   top: 2rem;
   right: 2rem;
@@ -49,7 +50,7 @@ const Icon = styled.div`
   div {
     width: 2rem;
     height: 0.25rem;
-    background: white;
+    background: ${props => props.theme.colors.darkGrey};
     border-radius: 10px;
     transition: all 0.3s linear;
     position: relative;
@@ -68,6 +69,8 @@ const Icon = styled.div`
       transform: ${({ open }) => open ? 'rotate(-45deg)' : 'rotate(0)'};
     }
   }
+
+
 `
 
 const NoScroll = createGlobalStyle`

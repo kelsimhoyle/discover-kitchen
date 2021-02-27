@@ -1,30 +1,33 @@
 import React from "react";
 import Card from "./card";
-import Title from "./title";
-import MainBtn from "../styles/mainbtn";
-import CardContainer from "../styles/cardcontainer"
 
 const CardsComponent = ({ title, subtitle, items, url }) => {
     return (
+        <>
+            {/* // <div>
+        //     <div className="title">
+        //         <Title title={title} subtitle={subtitle ? subtitle : ""} />
+        //     </div> */}
 
-        <div className={`${title} card-comp`}>
-            <div className="container">
-                <Title title={title} subtitle={subtitle ? subtitle : ""} />
-                <CardContainer>
-                    {items.map(item => (
-                        <Card
-                            key={item.title}
-                            title={item.title}
-                            image={item.image}
-                            alt={item.alt}
-                            blurb={item.blurb}
-                        />
-                    ))}
-                </CardContainer>
-
-                <MainBtn href={url ? url : (`/${title.toLowerCase()}`)}>View More</MainBtn>
+            <div className="section is-medium is-desktop">
+            <h2>{ title }</h2>
+            <div className="columns">
+                {items.map(item => (
+                    <Card
+                        key={item.title}
+                        title={item.title}
+                        image={item.image}
+                        alt={item.alt}
+                        blurb={item.blurb}
+                        sectionName={title}
+                    />
+                ))}
+                </div>
             </div>
-        </div>
+            {/* <MainBtn href={url ? url : (`/${title.toLowerCase()}`)}>View More</MainBtn>
+        </div> */}
+        </>
+
     )
 
 };

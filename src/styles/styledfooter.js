@@ -3,16 +3,22 @@ import styled from "styled-components";
 
 const Footer = styled.footer`
     width: 100vw;
-    padding-top: 150px;
+    height: auto;
+    
+    .footer-content {
+    background-color: ${props => props.theme.colors.lightGrey};
+    display: flex;
+    flex-direction: column;
+    width: 100%;
     position: absolute;
     bottom: 0;
-    background-color: ${props => props.theme.colors.lightBlue};
+    color: white;
 
-    .footer-content {
-        width: 100vw;
-        display: flex;
-        flex-direction: column;
+        div {
+            margin: 1rem auto;
+        }
     }
+   
 
     .btn {
         align-self: baseline;
@@ -20,10 +26,10 @@ const Footer = styled.footer`
 
     .links {
         a {
-            color: #FFFF;
+            color: white;
             margin: 1rem .5rem;
-            padding-bottom: .5rem;
-            border-bottom: 2px solid #FFFF;
+            padding: .5rem;
+            border-bottom: .5rem solid ${props => props.theme.colors.red};
             font-size: ${props => props.theme.fontSizes.medium};
             text-decoration: none;
             text-transform: uppercase;
@@ -38,7 +44,6 @@ const Footer = styled.footer`
         display: inline;
         font-size: 1.5rem;
         padding: .25rem;
-        background: ${props => props.theme.colors.red};
     }
 
   .footer-links {
@@ -57,39 +62,32 @@ const Footer = styled.footer`
 
   }
 
-  width: 100vw;
-    margin: auto;
 
-    img {
-        height: 300px;
-        width: auto;
-        margin: auto;
-        position: absolute;
-        top: -165px;
-        left: 50%;
-        transform: translate(-50%, 0);
+  img {
+        height: auto;
+        width: 50%;
+        margin: 1rem auto;
     }
 
 
   @media ${props => props.theme.device.laptop} {
-    padding-top: 0;
-
+    width: 100vw;
     .footer-content {
-        width: 60vw;
-        padding: 1rem;
-        margin: auto;
-        flex-direction: row;
-        justify-content: space-between;
-        
+        background-color: ${props => props.theme.colors.lightGrey};
+    100%;
+    padding: 2rem 10%;
+    margin: auto;
+    flex-direction: row;
+    justify-content: space-between;
+    
         button {
             border-bottom: none;
         }
     }
- 
 
     img {
-        top: -175px;
-        left: 10%;
+        height: 300px;
+        width: auto;
     }
 
     .footer-links {

@@ -65,17 +65,14 @@ const ContactForm = () => {
     }
 
     return (
-        <form method="post">
-            <Form>
-            <label>
-                <h3> Contact</h3>
-            </label>
-                <fieldset>
-                    <div>
-                        <label for="name">
-                            Name
+        <form method="post" className="box">
+            <h3> Contact</h3>
+            <fieldset>
+                <div className="field">
+                    <label for="name" className="label">
+                        Name
                         </label>
-
+                    <div className="control">
                         <input
                             type="text"
                             name="name"
@@ -83,23 +80,31 @@ const ContactForm = () => {
                             id="name"
                             onChange={handleChange} />
                     </div>
-                    <div>
-                        <label for="email">
-                            E-Mail
+                </div>
+                <div className="field has-icons-left has-icons-right">
+                    <label for="email" className="label">
+                        E-Mail
                             </label>
-                        <input
-                            type="email"
-                            name="email"
-                            value={data.email}
+                    <div className="control">
+                        <input className="input is-danger" type="email" placeholder="Email input" value={data.email}
                             id="email"
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div>
-                        <label for="message">
-                            Message
-                        </label>
+                            name="email"
+                            onChange={handleChange} />
+                        <span className="icon is-small is-left">
+                            <i className="fa fa-envelope"></i>
+                        </span>
+                        {/* <span className="icon is-small is-right">
+                            <i className="fa fa-warning"></i>
+                        </span> */}
+                        {/* <p className="help is-danger">This email is invalid</p> */}
 
+                    </div>
+                </div>
+                <div className="field">
+                    <label for="message" className="label">
+                        Message
+                        </label>
+                    <div className="control">
                         <textarea
                             name="message"
                             id="message"
@@ -107,9 +112,9 @@ const ContactForm = () => {
                             rows="5"
                             onChange={handleChange} />
                     </div>
-                </fieldset>
-                <button type="submit" onSubmit={formSubmit} onClick={formSubmit}>Send</button>
-            </Form>
+                </div>
+            </fieldset>
+            <button type="submit" onSubmit={formSubmit} onClick={formSubmit}>Send</button>
 
         </form>
     )

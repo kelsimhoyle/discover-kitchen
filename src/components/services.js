@@ -1,18 +1,17 @@
 import React from "react";
-import Img from "gatsby-image";
-import CardStyle from "../styles/card";
 
-
-const Card = ({ title, image, alt, blurb, sectionName }) => {
+const Services = ({ title, image, alt, blurb }) => {
     return (
-        <>
-        <div className={`${ sectionName === 'Services' ? 'is-one-half' : 'is-one-third' } column box m-1`}>
-                <Img
+        <div className="columns">
+            <div className="column is-one-third">
+            {/* <Img
                     fluid={image.childImageSharp.fluid}
                     objectFit="cover"
                     objectPosition="50% 50%"
                     alt={alt}
-                />
+                /> */}
+            </div>
+            <div className="column">
                 <h3>{title}</h3>
                 {blurb ? (
                     <div>
@@ -20,8 +19,8 @@ const Card = ({ title, image, alt, blurb, sectionName }) => {
                     </div>
                 ) : null}
             </div>
-            </>
+        </div>
     )
-};
+}
 
-export default Card;
+export default Services;
