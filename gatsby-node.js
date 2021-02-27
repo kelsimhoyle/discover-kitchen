@@ -1,6 +1,4 @@
 const path = require(`path`);
-const IMAGE_PATH = './src/images/';
-
 
 exports.createPages = ({ graphql, actions }) => {
   const { createPage } = actions;

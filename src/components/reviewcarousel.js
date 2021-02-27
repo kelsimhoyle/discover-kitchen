@@ -1,8 +1,15 @@
 import React, { useEffect } from "react";
-import bulmaCarousel from "bulma-carousel/dist/js/bulma-carousel.min.js";
 import "bulma-carousel/src/sass/index.sass";
 import ReviewCard from "./reviewcard";
 import Reviews from "../data/reviews.json";
+
+
+const bulmaCarousel = (() => {
+    if (typeof window !== 'undefined') {
+        return require('bulma-carousel')
+    }
+})()
+
 
 const ReviewCarousel = () => {
 
