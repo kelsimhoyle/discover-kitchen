@@ -26,8 +26,8 @@ const Landing = () => (
                 />
                 </div>
                 <div className="landing-text box">
-                    <h1>Discover Kitchen</h1>
-                    <p>Discover Kitchen is a Denver based personal chef and small businesses catering......</p>
+                    <h1 className="title">Discover Kitchen</h1>
+                    <p>Discover Kitchen is a Denver based personal chef and small businesses caterer. Providing meal solutions for customers to relieve the stress of planning. etc. etc...</p>
                 </div>
             </StyledLanding>
         )}

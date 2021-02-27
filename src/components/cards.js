@@ -10,7 +10,7 @@ const CardsComponent = ({ title, subtitle, items, url }) => {
         //     </div> */}
 
             <div className="section is-medium is-desktop">
-            <h2>{ title }</h2>
+            <h3 className="title">{ title }</h3>
             <div className="columns">
                 {items.map(item => (
                     <Card

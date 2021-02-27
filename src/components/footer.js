@@ -36,34 +36,6 @@ const Footer = () => {
                     </div>
                 </div>
             </footer>
-
-            {/* <StyledFooter >
-            <div ref={footerRef} className=>
-                    <img src={K} alt="Discover Kitchen" />
-                <div className="footer-links">
-                    <div>
-                        <h4>Contact</h4>
-                        <ul className="links">
-                            <li><a href="#" target="_blank"> email</a></li>
-                            <li><a href="#" target="_blank">instagram</a></li>
-                            <li><a href="#" target="_blank">facebook</a></li>
-                        </ul>
-                    </div>
-                    <div>
-                    <h4>Site Links</h4>
-                        <ul className="links">
-                            <li><Link to="/">Home</Link></li>
-                            <li><Link to="/about">About</Link></li>
-                            <li><Link to="/services">Services</Link></li>
-                            <li><Link to="/menu">Menu</Link></li>
-                        </ul>
-                    </div>
-                </div>
-                <div className="schedule">
-                        <MainBtn>Schedule Consultation</MainBtn>
-                    </div>
-                    </div>
-        </StyledFooter> */}
         </>
     )
 };

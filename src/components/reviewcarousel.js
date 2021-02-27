@@ -32,7 +32,7 @@ const ReviewCarousel = () => {
     return (
         <div className="section is-medium box has-text-centered	">
         <h3 className="title mb-2">Testimonials</h3>
-                <div className="carousel" data-slides-to-scroll="1" id="review">
+                <div className="carousel is-clipped	mt-4" data-slides-to-scroll="1" id="review">
                     {Reviews.map(review => (
                         <div className={`item-${review.id}`}>
                             <ReviewCard

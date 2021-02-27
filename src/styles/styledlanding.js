@@ -18,7 +18,7 @@ const Landing = styled.div`
 
     .landing-text {
         position: absolute;            
-        bottom: -100px;   
+        bottom: -10px;   
         left: 50%;         
         z-index: 5;         
         transform: translate(-50%);

@@ -10,31 +10,32 @@ const Header = () => {
     return (
         <nav className="navbar" role="navigation" aria-label="main navigation">
             <div className="container">
-            <div className="navbar-brand">
-                <Link to="/" className="navbar-item">
-                    <img src={DK} alt="Discover Kitcehn" />
-                </Link>
-            </div>
+                <div className="navbar-brand">
+                    <Link to="/" className="navbar-item">
+                        <img src={DK} alt="Discover Kitchen" />
+                    </Link>
 
-            <a
-                role="button"
-                className="navbar-burger"
-                aria-label="menu"
-                aria-expanded="false"
-                onClick={() => setisActive(!isActive)}
-            >
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-                <span aria-hidden="true"></span>
-            </a>
+                    <a
+                        role="button"
+                        className="navbar-burger"
+                        aria-label="menu"
+                        aria-expanded="false"
+                        onClick={() => setisActive(!isActive)}
+                    >
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                        <span aria-hidden="true"></span>
+                    </a>
+                    </div>
 
-            <div id="dk-nav" className={`navbar-menu ${isActive ? 'is-active' : '' }`}>
-                <div className="navbar-end">
-                    <NavLinks />
+                    <div id="dk-nav" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
+                        <div className="navbar-end">
+                            <NavLinks />
+                        </div>
+
+                    </div>
                 </div>
-
-            </div>
-            </div>
+            
         </nav>
 
     )
