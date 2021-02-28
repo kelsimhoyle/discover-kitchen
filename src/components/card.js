@@ -6,7 +6,7 @@ import CardStyle from "../styles/card";
 const Card = ({ title, image, alt, blurb, sectionName }) => {
     return (
         <>
-        <div className={`${ sectionName === 'Services' ? 'is-one-half' : 'is-one-third' } column box m-3`}>
+        <div className={`${ sectionName === 'Services' ? 'is-one-half' : 'is-one-quarter' } column box m-3`}>
                 <Img
                     fluid={image.childImageSharp.fluid}
                     objectFit="cover"
