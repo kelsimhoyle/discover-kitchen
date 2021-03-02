@@ -1,5 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
+import axios from "axios";
+import { useForm } from "react-hook-form";
+import { ErrorMessage } from '@hookform/error-message';
+import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
+import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import { FaExclamationTriangle } from "@react-icons/all-files/fa/FaExclamationTriangle";
+
 
 const Form = styled.div`
     width: 90vw;
@@ -48,75 +55,160 @@ fieldset {
         }
 `
 
+const post = (data) => {
+    let postData = data;
+
+    if (data.services) {
+        postData.services = data.services.join(", ");
+    }
+    axios.post(process.env.GATSBY_SHEETS_API, postData)
+    .then(response => {
+        console.log(response);
+    })
+    .catch(err => console.log(err))
+};
+
 const ContactForm = () => {
-    const [data, setData] = useState({ name: '', email: '', message: '', sent: false, err: '' });
+    console.log(`${process.env.GATSBY_SHEETS_API}`)
+    const { register, handleSubmit, watch, errors } = useForm();
 
-    const handleChange = (e) => {
-        const { name, value } = e.target
-        setData({
-            ...data,
-            [name]: value
-        })
-    }
+    console.log(errors)
+    const onSubmit = data => post(data);
 
-    const formSubmit = (e) => {
-        e.preventDefault()
-        console.log(data)
-    }
 
     return (
-        <form method="post" className="box">
-            <h3> Contact</h3>
-            <fieldset>
-                <div className="field">
-                    <label for="name" className="label">
-                        Name
-                        </label>
-                    <div className="control">
-                        <input
-                            type="text"
-                            name="name"
-                            value={data.name}
-                            id="name"
-                            onChange={handleChange} />
-                    </div>
+        <div className="container box">
+            <h2 className="title is-2 is-capitalized">Contact Us</h2>
+            <form action="" onSubmit={handleSubmit(onSubmit)} />
+
+            <div className="field">
+                <label for="name" className="label is-size-4 has-text-weight-light"></label>
+                <div className="control has-icons-left">
+                    <input
+                        type="text"
+                        name="name"
+                        className="input"
+                        placeholder="Name"
+                        autofocus
+                        ref={register({ required: "Name is required" })}
+                    />
+                    <span className="icon is-left">
+                        <FaUser />
+                    </span>
                 </div>
-                <div className="field has-icons-left has-icons-right">
-                    <label for="email" className="label">
-                        E-Mail
-                            </label>
-                    <div className="control">
-                        <input className="input is-danger" type="email" placeholder="Email input" value={data.email}
-                            id="email"
-                            name="email"
-                            onChange={handleChange} />
-                        <span className="icon is-small is-left">
-                            <i className="fa fa-envelope"></i>
+
+                <ErrorMessage
+                    errors={errors}
+                    name="name"
+                    render={({ message }) => <p className="help is-danger">{message}</p>}
+                />
+            </div>
+
+
+            <div className="field">
+                <label for="email" className="label is-size-4 has-text-weight-light"></label>
+                <div className="control has-icons-left">
+                    <input
+                        type="email"
+                        name="email"
+                        id="email"
+                        className="input"
+                        placeholder="Email"
+                        ref={register({
+                            required: "E-mail is required",
+                            pattern: {
+                                value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                                message: "Please enter a valid e-mail address"
+                            }
+                        })}
+
+                    />
+                    <span className="icon is-left">
+                        <FaEnvelope />
+                    </span>
+                    {errors.email ? (
+                        <span className="icon is-small is-right">
+                            <FaExclamationTriangle />
                         </span>
-                        {/* <span className="icon is-small is-right">
-                            <i className="fa fa-warning"></i>
-                        </span> */}
-                        {/* <p className="help is-danger">This email is invalid</p> */}
+                    ) : null}
 
+                </div>
+
+                <ErrorMessage
+                    errors={errors}
+                    name="email"
+                    render={({ message }) => <p className="help is-danger">{message}</p>}
+                />
+            </div>
+
+            <div className="field is-horizontal">
+                <div className="field-label">
+                    <label className="label">Services interest in:</label>
+                </div>
+                <div className="field-body">
+                    <div className="field">
+                        <div className="control">
+                            <label className="checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="catering"
+                                    name="services"
+                                    value="catering"
+                                    ref={register}
+
+                                />
+                                    Small Event Catering
+                             </label>
+                        </div>
+                    </div>
+                    <div className="field">
+                        <div className="control">
+                            <label className="checkbox">
+                                <input
+                                    type="checkbox"
+                                    id="chef"
+                                    name="services"
+                                    value="chef"
+                                    ref={register}
+
+                                />
+                                    Personal Chef
+                             </label>
+                        </div>
                     </div>
                 </div>
                 <div className="field">
-                    <label for="message" className="label">
-                        Message
-                        </label>
                     <div className="control">
-                        <textarea
-                            name="message"
-                            id="message"
-                            value={data.message}
-                            rows="5"
-                            onChange={handleChange} />
+                        <label className="checkbox">
+                            <input
+                                type="checkbox"
+                                id="other"
+                                name="services"
+                                value="other"
+                                ref={register}
+
+                            />
+                                    Other
+                             </label>
                     </div>
                 </div>
-            </fieldset>
-            <button type="submit" onSubmit={formSubmit} onClick={formSubmit}>Send</button>
+            </div>
 
-        </form>
+            <div className="field">
+                <label for="message" className="label is-size-4 has-text-weight-light"></label>
+                <textarea
+                    name="message"
+                    id="message"
+                    ref={register}
+                    rows="5"
+                    className="textarea is-medium"
+                    placeholder="Message">
+                </textarea>
+            </div>
+
+            <button type="submit" onSubmit={handleSubmit(onSubmit)} onClick={handleSubmit(onSubmit)} className="button is-success is-size-5">Send</button>
+        </div>
+
     )
 }
 
