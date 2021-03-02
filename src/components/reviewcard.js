@@ -44,9 +44,9 @@ const ReviewCard = ({ review, name }) => {
             <p >
                 {review}
             </p>
-            <p className="has-text-weight-semibold	"> 
-                {name}
-            </p>
+            <p>
+                {name} - Denver
+    </p>
         </Card>
 
     )

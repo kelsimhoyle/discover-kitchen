@@ -2,7 +2,6 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import "../styles/mystyles.scss";
 import Landing from "../components/landing";
-import AboutComponent from "../components/about";
 import CardsComponent from "../components/cards";
 import ReviewCarousel from "../components/reviewcarousel";
 

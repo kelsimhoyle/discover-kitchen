@@ -9,9 +9,9 @@ const CardsComponent = ({ title, subtitle, items, url }) => {
         //         <Title title={title} subtitle={subtitle ? subtitle : ""} />
         //     </div> */}
 
-            <div className="section is-medium is-desktop has-text-centered">
+            <div className="section is-medium is-desktop">
             <h3 className="title">{ title }</h3>
-            <div className="columns is-justify-content-center">
+            <div className="columns">
                 {items.map(item => (
                     <Card
                         key={item.title}

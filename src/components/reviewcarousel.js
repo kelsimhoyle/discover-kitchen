@@ -18,10 +18,8 @@ const ReviewCarousel = () => {
 
             bulmaCarousel.attach("#review", {
                 slidesToScroll: 1,
-                slidesToShow: 2,
-                navigationKeys: false,
-                pagination: true,
-                loop: true
+                slidesToShow: 3,
+                pagination: false,
                     });
     
 
@@ -33,7 +31,7 @@ const ReviewCarousel = () => {
 
     return (
         <div className="section is-medium box has-text-centered	">
-        <h3 className="title mb-4">Testimonials</h3>
+        <h3 className="title mb-2">Testimonials</h3>
                 <div className="carousel is-clipped	mt-4" data-slides-to-scroll="1" id="review">
                     {Reviews.map(review => (
                         <div className={`item-${review.id}`}>
