@@ -1,58 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React, { useState } from "react";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message/dist';
+import { ErrorMessage } from '@hookform/error-message';
 import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
 import { FaUser } from "@react-icons/all-files/fa/FaUser";
+import { FaCheckCircle } from "@react-icons/all-files/fa/FaCheckCircle";
 import { FaExclamationTriangle } from "@react-icons/all-files/fa/FaExclamationTriangle";
-
-const Form = styled.div`
-    width: 90vw;
-    padding: 5vw;
-    margin: 2.5vw;    
-    background-color: rgba(255,255,255,0.2);
-    border-radius: .5rem;
-    margin: auto;
-    display: flex; 
-    flex-direction: column;
-    align-items: center;
-
-    h3 {
-        font-weight: bold;
-    }
-
-fieldset {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 100%;
-
-    div {
-        width: 80%;
-        margin: .5rem;
-    }
-
-
-    label {
-        width: 27%;
-        padding-right: 3%;
-        text-align: right;
-        white-space: nowrap;
-        user-select: none;
-        cursor: pointer;
-    }
-
-    input, textarea, select {
-        width: 70%
-        }
-    }
-
-@media ${props => props.theme.device.laptop} {
-            width: 40vw;
-            padding: 1rem;
-        }
-`
 
 const post = (data) => {
     let postData = data;
@@ -60,18 +13,25 @@ const post = (data) => {
     if (data.services) {
         postData.services = data.services.join(", ");
     }
-    axios.post(process.env.GATSBY_SHEETS_API, postData)
-    .then(response => {
-        console.log(response);
-    })
-    .catch(err => console.log(err))
+    return axios.post(process.env.GATSBY_SHEETS_API, postData)
 };
 
 const ContactForm = () => {
     const { register, handleSubmit, watch, errors } = useForm();
+    const [state, setState] = useState({
+        submitting: false,
+        submitted: false
+    });
 
     console.log(errors)
-    const onSubmit = data => post(data);
+    const onSubmit = data => {
+        setState({ ...state, submitting: true })
+        post(data)
+            .then(res => {
+                if (res.status === 200) setState({ submitting: false, submitted: true });
+            })
+            .catch(err => console.log(err))
+    };
 
 
     return (
@@ -204,7 +164,22 @@ const ContactForm = () => {
                 </textarea>
             </div>
 
-            <button type="submit" onSubmit={handleSubmit(onSubmit)} onClick={handleSubmit(onSubmit)} className="button is-success is-size-5">Send</button>
+            <button
+                type="submit"
+                onSubmit={handleSubmit(onSubmit)}
+                onClick={handleSubmit(onSubmit)}
+                className={`button is-success is-size-5 ${state.submitting ? 'is-loading' : null}`}>
+                Send
+            </button>
+            { state.submitted ? (
+                <div className="columns is-justify-content-center">
+                <div className=" box column is-one-third has-text-centered">
+                    <FaCheckCircle className="is-size-1" />
+                    <p className="is-size-3">Thank you!</p>
+                    <p>We will get back to you as soon as possible.</p>
+                    </div>
+                </div>
+            ) : null}
         </div>
 
     )
