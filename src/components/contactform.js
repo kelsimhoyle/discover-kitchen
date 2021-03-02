@@ -2,7 +2,7 @@ import React from "react";
 import styled from "styled-components";
 import axios from "axios";
 import { useForm } from "react-hook-form";
-import { ErrorMessage } from '@hookform/error-message';
+import { ErrorMessage } from '@hookform/error-message/dist';
 import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
 import { FaUser } from "@react-icons/all-files/fa/FaUser";
 import { FaExclamationTriangle } from "@react-icons/all-files/fa/FaExclamationTriangle";
