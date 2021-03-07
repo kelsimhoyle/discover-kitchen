@@ -4,12 +4,12 @@
         "title": "Small Event Catering",
         "image": "./images/table.jpg",
         "alt": "Small Event Catering",
-        "blurb": "Lorum ipsum"
+        "blurb": "Planning a dinner party? Overwhelmed with creating a delciious and beautiful menu? Let us take over! We will decide on a menu together. The day of the event, we will prepare the meal in your kitchen so it is fresh and delicious."
     },
     {
         "title": "Personal Chef",
         "image": "./images/meals.jpg",
         "alt": "Personal Chef",
-        "blurb": "Lorum ipsum"
+        "blurb": "Cooking fresh and delicious meals every day can be daunting. Let us step in to help. We will work together to create a meal plan specifically for you and your dietary needs. We shop for the food, cook in your kitchen, and ease the stress of the week."
     }
 ]}

@@ -1,4 +1,8 @@
-const path = require(`path`)
+const path = require(`path`);
+
+require("dotenv").config({
+  path: `.env.${process.env.NODE_ENV}`,
+});
 
 module.exports = {
     siteMetadata: {
@@ -15,6 +19,7 @@ module.exports = {
           component: require.resolve(`./src/styles/layout`),
         },
       },
+      `gatsby-plugin-image`,
       `gatsby-transformer-remark`,
       `gatsby-plugin-sharp`,
       `gatsby-transformer-sharp`,
@@ -32,6 +37,19 @@ module.exports = {
         path: `./src/data`,
       },
     },
-      
+    {
+      resolve: `gatsby-source-airtable`,
+      options: {
+        apiKey: process.env.AIRTABLE_API_KEY,
+        concurrency: 5,
+        tables: [
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: process.env.AIRTABLE_TABLE_NAME,
+            mapping: { "image": "fileNode" }
+          }
+        ]
+      }
+    }
     ]
 }

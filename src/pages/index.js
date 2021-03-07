@@ -4,25 +4,19 @@ import "../styles/mystyles.scss";
 import Landing from "../components/landing";
 import CardsComponent from "../components/cards";
 import ReviewCarousel from "../components/reviewcarousel";
+import FeaturedMenu from "../components/featuredmenu";
 
 const IndexPage = ({ data }) => {
-  let { about, menu, services } = data.pagesJson;
-
-  console.log(menu)
+  let { about,  services } = data.pagesJson;
+  let menu = data.allAirtable.edges
 
   about = about.childDataJson;
-  menu = menu.childDataJson;
   services = services.childDataJson;
 
   return (
       <>
         <Landing />
         <div className="container">
-           {/* <AboutComponent 
-             text={about.text}
-             image={about.image}
-             button={about.button}
-           /> */}
 
           <CardsComponent
             items={services.items}
@@ -31,16 +25,13 @@ const IndexPage = ({ data }) => {
 
            <ReviewCarousel />
 
-          <CardsComponent
-            items={menu.items}
-            title={menu.name}
-            />
+         <FeaturedMenu menu={menu} />
         </div>
       </>
   )
 }
 
-export const HomeQuery = graphql`query {
+export const HomeQuery = graphql`{
   pagesJson(title: {eq: "Discover Kitchen"}) {
     title
     subtitle
@@ -53,9 +44,7 @@ export const HomeQuery = graphql`query {
         text
         image {
           childImageSharp {
-            fluid {
-              ...GatsbyImageSharpFluid
-            }
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
@@ -69,28 +58,37 @@ export const HomeQuery = graphql`query {
           title
           image {
             childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
+              gatsbyImageData( 
+                width: 700,
+                height: 500,
+                placeholder: BLURRED)
             }
           }
         }
       }
     }
-    menu {
-      childDataJson {
-        name
-        items {
-          alt
-          blurb
-          title
+  }
+  allAirtable(filter: {data: {featured: {eq: true}}}) {
+    edges {
+      node {
+        id
+        data {
           image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 500,
+                  height: 500,
+                  placeholder: BLURRED
+                  )
               }
             }
           }
+          available
+          category
+          featured
+          item
+          description
         }
       }
     }

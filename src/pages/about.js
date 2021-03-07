@@ -19,30 +19,28 @@ const About = ({ data }) => {
     )
 };
 
-export const AboutQuery = graphql`query {
-    pagesJson(title: {eq: "About"}) {
-      title
-      subtitle
-      slug
-      data {
-        childDataJson {
-          button {
-            href
-            text
-          }
+export const AboutQuery = graphql`{
+  pagesJson(title: {eq: "About"}) {
+    title
+    subtitle
+    slug
+    data {
+      childDataJson {
+        button {
+          href
           text
-          image {
-            childImageSharp {
-              fluid {
-                ...GatsbyImageSharpFluid
-              }
-            }
+        }
+        text
+        image {
+          childImageSharp {
+            gatsbyImageData(layout: FULL_WIDTH)
           }
         }
       }
     }
   }
-  `
+}
+`
   
 
 export default About;
