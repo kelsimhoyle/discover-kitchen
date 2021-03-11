@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import axios from "axios";
 import { useForm } from "react-hook-form";
 import { ErrorMessage } from '@hookform/error-message';
 import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
@@ -7,14 +6,7 @@ import { FaUser } from "@react-icons/all-files/fa/FaUser";
 import { FaCheckCircle } from "@react-icons/all-files/fa/FaCheckCircle";
 import { FaExclamationTriangle } from "@react-icons/all-files/fa/FaExclamationTriangle";
 
-const post = (data) => {
-    let postData = data;
-
-    if (data.services) {
-        postData.services = data.services.join(", ");
-    }
-    return axios.post(process.env.GATSBY_SHEETS_API, postData)
-};
+import addContact from "../airtable";
 
 const ContactForm = () => {
     const { register, handleSubmit, watch, errors } = useForm();
@@ -23,14 +15,9 @@ const ContactForm = () => {
         submitted: false
     });
 
-    console.log(errors)
     const onSubmit = data => {
         setState({ ...state, submitting: true })
-        post(data)
-            .then(res => {
-                if (res.status === 200) setState({ submitting: false, submitted: true });
-            })
-            .catch(err => console.log(err))
+        if (addContact(data)) setState({ submitting: false, submitted: true });
     };
 
 
