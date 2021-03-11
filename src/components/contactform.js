@@ -6,7 +6,7 @@ import { FaUser } from "@react-icons/all-files/fa/FaUser";
 import { FaCheckCircle } from "@react-icons/all-files/fa/FaCheckCircle";
 import { FaExclamationTriangle } from "@react-icons/all-files/fa/FaExclamationTriangle";
 
-import addContact from "../airtable";
+import addContact from "../functions/addContact";
 
 const ContactForm = () => {
     const { register, handleSubmit, watch, errors } = useForm();
