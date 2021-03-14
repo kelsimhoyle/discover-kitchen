@@ -1,7 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import "../styles/mystyles.scss";
-import Landing from "../components/landing";
+import Layout from "../styles/layout";
 import CardsComponent from "../components/cards";
 import ReviewCarousel from "../components/reviewcarousel";
 import FeaturedMenu from "../components/featuredmenu";
@@ -14,8 +14,7 @@ const IndexPage = ({ data }) => {
   services = services.childDataJson;
 
   return (
-      <>
-        <Landing />
+      <Layout page="home">
         <div className="container">
 
           <CardsComponent
@@ -27,7 +26,7 @@ const IndexPage = ({ data }) => {
 
          <FeaturedMenu menu={menu} />
         </div>
-      </>
+      </Layout>
   )
 }
 

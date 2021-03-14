@@ -3,26 +3,8 @@ import ContactForm from "../components/contactform";
 import styled from "styled-components";
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
 import { MdMailOutline } from "@react-icons/all-files/md/MdMailOutline";
-
-const ContactItems = styled.div`
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: space-around;
-    padding: 2rem;
-    
-    .icon {
-        font-size: 2rem;
-    }
-
-    .contact-item {
-        display: flex;
-        flex-direction: row;
-        align-items: center;
-        margin: 1rem;
-        color: white;
-    }
-`
+import Layout from "../styles/layout";
+import ContactItems from "../styles/contactitems"
 
 const Connect = styled.div`
     background: ${props => props.theme.colors.red};
@@ -48,7 +30,7 @@ const Page = styled.div`
 
 const Contact = () => {
     return (
-        <>
+        <Layout>
             <h2>Contact</h2>
             <p>Let's get cookin'!</p>
             <Page>
@@ -73,7 +55,7 @@ const Contact = () => {
                     </ContactItems>
                 </Connect>
             </Page>
-        </>
+        </Layout>
     )
 };
 

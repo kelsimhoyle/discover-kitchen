@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Layout from "../styles/layout";
 import ServicesBox from "../components/servicesbox";
 
 const Services = ({ data }) => {
@@ -7,6 +8,7 @@ const Services = ({ data }) => {
     const services = pageData.data.childDataJson.items;
 
     return (
+      <Layout>
         <div className="container">
             <section className="hero">
                 <div className="hero-body">
@@ -28,6 +30,7 @@ const Services = ({ data }) => {
                 />
             ))}
         </div>
+        </Layout>
     )
 }
 

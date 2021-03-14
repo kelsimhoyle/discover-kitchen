@@ -8,7 +8,7 @@ const Header = () => {
     const [isActive, setisActive] = useState(false)
 
     return (
-        <nav className="navbar" role="navigation" aria-label="main navigation">
+        <nav className="navbar is-fixed-top" role="navigation" aria-label="main navigation">
             <div className="container">
                 <div className="navbar-brand">
                     <Link to="/" className="navbar-item">
@@ -29,7 +29,7 @@ const Header = () => {
                     </div>
 
                     <div id="dk-nav" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
-                        <div className="navbar-end">
+                        <div className="navbar-end" onClick={() => setisActive(false)}>
                             <NavLinks />
                         </div>
 

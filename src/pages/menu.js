@@ -1,11 +1,13 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Layout from "../styles/layout";
 import FeaturedMenu from "../components/featuredmenu";
 
 const Menu = ({ data }) => {
     let menu = data.allAirtable.edges
 
     return (
+        <Layout>
         <div className="container">
             <section className="hero">
                 <div className="hero-body">
@@ -25,6 +27,7 @@ const Menu = ({ data }) => {
             </div>
             <p>Full menu list coming soon.</p>
         </div>
+        </Layout>
     )
 }
 
