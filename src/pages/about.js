@@ -1,5 +1,6 @@
 import React from "react";
 import { graphql } from "gatsby";
+import Layout from "../styles/layout";
 import AboutComponent from "../components/about";
 import AboutPage from "../styles/aboutpage";
 
@@ -8,6 +9,7 @@ const About = ({ data }) => {
     const {text, button, image } = info.childDataJson;
 
     return (
+      <Layout>
         <AboutPage>
         <AboutComponent 
             title={subtitle}
@@ -16,6 +18,7 @@ const About = ({ data }) => {
             image={image}
          />
         </AboutPage>
+        </Layout>
     )
 };
 
