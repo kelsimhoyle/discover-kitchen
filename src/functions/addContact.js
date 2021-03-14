@@ -1,6 +1,6 @@
 import Airtable from "airtable";
 
-var base = new Airtable({apiKey: process.env.AIRTABLE_API_KEY}).base(process.env.AIRTABLE_BASE_ID);
+var base = new Airtable({apiKey: process.env.GATSBY_AIRTABLE_API_KEY}).base(process.env.AIRTABLE_BASE_ID);
 
 const addContact = (data) => {
     let postData = data;
