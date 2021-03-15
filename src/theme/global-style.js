@@ -14,7 +14,7 @@ const size = {
 
 export const theme = {
     colors: {
-      red: "#c81d25",
+      red: "#ff0000",
       lightRed: "#ff5a5f",
       lightBlue: "#a8dadc",
       blue: "#457b9d",

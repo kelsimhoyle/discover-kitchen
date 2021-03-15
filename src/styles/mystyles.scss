@@ -88,6 +88,7 @@
 
 // If need, change your variables before importing Bulma
 $title-color: #ff0000;
+$link: $title-color;
 $navbar-item-img-max-height: 3.5rem;
 
 @import "~bulma/bulma.sass";
