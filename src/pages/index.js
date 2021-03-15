@@ -24,7 +24,7 @@ const IndexPage = ({ data }) => {
 
            <ReviewCarousel />
 
-         <FeaturedMenu menu={menu} />
+         <FeaturedMenu menu={menu} viewMore={true} />
         </div>
       </Layout>
   )
@@ -58,9 +58,11 @@ export const HomeQuery = graphql`{
           image {
             childImageSharp {
               gatsbyImageData( 
-                width: 700,
-                height: 500,
-                placeholder: BLURRED)
+                placeholder: BLURRED,
+                width: 600,
+                height: 700,
+                transformOptions: {fit: COVER, cropFocus: CENTER}
+                )
             }
           }
         }
@@ -78,7 +80,9 @@ export const HomeQuery = graphql`{
                 gatsbyImageData(
                   width: 500,
                   height: 500,
-                  placeholder: BLURRED
+                  placeholder: BLURRED,
+                transformOptions: {fit: COVER, cropFocus: CENTER}
+
                   )
               }
             }

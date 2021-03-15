@@ -7,7 +7,7 @@ import HomeLayout from "./homelayout";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    margin-top: 3.25rem;
+    margin-top: 3.5rem;
   }
 `
 
