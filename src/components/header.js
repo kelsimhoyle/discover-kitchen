@@ -1,8 +1,7 @@
 import React, { useState } from "react";
 import { Link } from "gatsby";
+import { StaticImage } from "gatsby-plugin-image";
 import NavLinks from "./navlinks";
-import StyledHeader from "../styles/styledheader";
-import DK from "../images/DiscoverKitchen.png";
 
 const Header = () => {
     const [isActive, setisActive] = useState(false)
@@ -12,7 +11,14 @@ const Header = () => {
             <div className="container">
                 <div className="navbar-brand">
                     <Link to="/" className="navbar-item">
-                        <img src={DK} alt="Discover Kitchen" />
+                    <StaticImage
+                        src="../images/DiscoverKitchen.png"
+                        alt="Discover Kitchen"
+                        placeholder="blurred"
+                        layout="fixed"
+                        width={175}
+g                        objectFit="cover"
+                    />
                     </Link>
 
                     <a

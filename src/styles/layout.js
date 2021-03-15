@@ -7,7 +7,7 @@ import HomeLayout from "./homelayout";
 
 const GlobalStyle = createGlobalStyle`
   body {
-    margin-top: 3.5rem;
+    margin-top: 4.25rem;
   }
 `
 
@@ -18,7 +18,6 @@ const Layout = ({ children, page }) => {
         <HomeLayout>
           {children}
         </HomeLayout>
-        <Footer />
       </ThemeProvider>
 
     )

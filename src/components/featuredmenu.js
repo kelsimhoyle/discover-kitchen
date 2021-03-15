@@ -1,31 +1,31 @@
 import React from "react";
+import { Link } from "gatsby";
+import Btn from "../components/btn";
 import MenuCard from "./menucard";
 
 const FeaturedMenu = ({ menu, viewMore }) => {
     return (
         <>
-            <div className="section is-medium is-desktop">
-                <h3 className="title">Featured Menu</h3>
-                <div className="columns">
-                    {menu.map(item => (
-                        <MenuCard
-                            key={item.node.data.id}
-                            title={item.node.data.item}
-                            image={item.node.data.image.localFiles[0]}
-                            description={item.node.data.description}
-                            alt={item.node.data.item}
-                        />
-                    ))}
-                </div>
+            <h3 className="title">Featured Menu</h3>
+            <div className="columns">
+                {menu.map(item => (
+                    <MenuCard
+                        key={item.node.data.id}
+                        title={item.node.data.item}
+                        image={item.node.data.image.localFiles[0]}
+                        description={item.node.data.description}
+                        alt={item.node.data.item}
+                    />
+                ))}
             </div>
+
             {viewMore ? (
                 <div className="has-text-centered">
-                    <a
-                        href="/menu"
-                        className="button is-medium"
+                    <Btn
+                        to="/menu"
                     >
                         View More
-                </a>
+                    </Btn>
                 </div>
             ) : null}
 

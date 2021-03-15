@@ -29,9 +29,10 @@ const Landing = () => {
                     <StaticImage
                         src="../images/DiscoverKitchen.png"
                         alt="Discover Kitchen"
+                        layout="constrained"
+                        width={750}
                         placeholder="blurred"
-                        layout="fullWidth"
-                        objectFit="cover"
+g                        objectFit="cover"
                     />
                 </div>
             </StyledLanding>

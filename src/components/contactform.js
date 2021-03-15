@@ -23,7 +23,6 @@ const ContactForm = () => {
 
     return (
         <div className="container box">
-            <h2 className="title is-2 is-capitalized">Contact Us</h2>
             <form action="" onSubmit={handleSubmit(onSubmit)} />
 
             <div className="field">

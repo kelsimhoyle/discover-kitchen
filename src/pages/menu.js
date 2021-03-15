@@ -1,6 +1,8 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../styles/layout";
+import Title from "../styles/title";
+import Btn from "../components/btn";
 import FeaturedMenu from "../components/featuredmenu";
 
 const Menu = ({ data }) => {
@@ -8,26 +10,27 @@ const Menu = ({ data }) => {
 
     return (
         <Layout>
-        <div className="container">
-            <section className="hero">
-                <div className="hero-body">
-                    <h2 className="title">
-                        Menu
-                    </h2>
-                    <p className="subtitle">
-                        Specialties and Favorites
-                    </p>
-                </div>
-            </section>
+            <div className="container mb-3">
+                <Title title="Menu" />
 
-            <div className="container">
                 <FeaturedMenu
                     menu={menu}
                 />
+                <div className="columns">
+                    <div className="column has-text-centered">
+                     <Btn to="/services">View Services</Btn>
+                    </div>
+                    <div className="column has-text-centered">
+                        <Btn to="/contact">Contact Us</Btn>
+                    </div>
+                </div>
+                <div className="section is-medium has-text-centered	mx-6">
+                    <p className="is-size-4">Full menu coming soon!</p>
+                </div>
+
+                
             </div>
-            <p>Full menu list coming soon.</p>
-        </div>
-        </Layout>
+        </Layout >
     )
 }
 
