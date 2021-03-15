@@ -6,7 +6,7 @@ const Landing = styled.div`
 
     .image {
         width: 100vw;
-        max-height: 100vh;
+        height: 100vh;
         overflow: hidden;
     }
 
@@ -15,10 +15,14 @@ const Landing = styled.div`
         top: 50%; 
         left: 50%;
         transform: translate(-50%, -50%);
-        width: 50%;
+        width: 80%;
         background-color:  rgba(255,255,255,.7);
+    }
 
-      
+    @media ${props => props.theme.device.laptop} {
+        .dk-logo {
+            width: 50%;
+        }
     }
 
 `;
