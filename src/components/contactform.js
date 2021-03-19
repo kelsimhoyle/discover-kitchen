@@ -9,7 +9,7 @@ import { FaExclamationTriangle } from "@react-icons/all-files/fa/FaExclamationTr
 import addContact from "../functions/addContact";
 
 const ContactForm = () => {
-    const { register, handleSubmit, watch, errors } = useForm();
+    const { register, handleSubmit, errors } = useForm();
     const [state, setState] = useState({
         submitting: false,
         submitted: false
@@ -33,6 +33,7 @@ const ContactForm = () => {
                         name="name"
                         className="input"
                         placeholder="Name"
+                        id="name"
                         autofocus
                         ref={register({ required: "Name is required" })}
                     />

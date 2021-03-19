@@ -1,5 +1,4 @@
 import React from "react";
-import { Link } from "gatsby";
 import Btn from "../components/btn";
 import Card from "./card";
 

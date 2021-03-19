@@ -29,13 +29,13 @@ const Footer = () => {
                             <div className="column">
                                 <h3>Let's Connect!</h3>
                                 <ContactItems>
-                                <a href="https://instagram.com/discoverkitchen" target="_blank">
+                                <a href="https://instagram.com/discoverkitchen" target="_blank" rel="noreferrer">
                                     <div className="contact-item">
                                         <FaInstagram className="icon" />
                                         <p>Follow My Culinary Adventures</p>
                                     </div>
                                 </a>
-                                <a href="/" target="_blank">
+                                <a href="/" target="_blank" rel="noreferrer">
                                     <div className="contact-item">
                                         <MdMailOutline className="icon" />
 

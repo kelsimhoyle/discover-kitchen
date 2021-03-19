@@ -11,37 +11,38 @@ const Header = () => {
             <div className="container">
                 <div className="navbar-brand">
                     <Link to="/" className="navbar-item">
-                    <StaticImage
-                        src="../images/DiscoverKitchen.png"
-                        alt="Discover Kitchen"
-                        placeholder="blurred"
-                        layout="fixed"
-                        width={175}
-g                        objectFit="cover"
-                    />
+                        <StaticImage
+                            src="../images/DiscoverKitchen.png"
+                            alt="Discover Kitchen"
+                            placeholder="blurred"
+                            layout="fixed"
+                            width={175}
+                            objectFit="cover"
+                        />
                     </Link>
 
-                    <a
+                    <div
                         role="button"
                         className="navbar-burger"
                         aria-label="menu"
                         aria-expanded="false"
                         onClick={() => setisActive(!isActive)}
+                        tabIndex={0}
                     >
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
                         <span aria-hidden="true"></span>
-                    </a>
-                    </div>
-
-                    <div id="dk-nav" className={`navbar-menu ${isActive ? 'is-active' : ''}`}>
-                        <div className="navbar-end" onClick={() => setisActive(false)}>
-                            <NavLinks />
-                        </div>
-
                     </div>
                 </div>
-            
+
+                <div id="dk-nav" className={`navbar-menu ${isActive ? 'is-active' : ''}`} role="navigation">
+                    <div className="navbar-end" onClick={() => setisActive(false)}>
+                        <NavLinks />
+                    </div>
+
+                </div>
+            </div>
+
         </nav>
 
     )

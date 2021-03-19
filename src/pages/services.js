@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql, Link } from "gatsby";
+import { graphql } from "gatsby";
 import { GiCalendar } from "@react-icons/all-files/gi/GiCalendar";
 import { GiPhone } from "@react-icons/all-files/gi/GiPhone";
 import { GiCookingPot } from "@react-icons/all-files/gi/GiCookingPot";
