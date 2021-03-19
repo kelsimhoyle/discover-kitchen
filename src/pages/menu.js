@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import Layout from "../styles/layout";
+import SEO from "../components/SEO/SEO";
 import Title from "../styles/title";
 import Btn from "../components/btn";
 import FeaturedMenu from "../components/featuredmenu";
@@ -10,6 +11,7 @@ const Menu = ({ data }) => {
 
     return (
         <Layout>
+            <SEO title="Discover Kitchen - Menu" />
             <div className="container">
                 <Title title="Menu" />
                 <div className="section m-2">

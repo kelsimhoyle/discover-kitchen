@@ -1,4 +1,5 @@
 import React from "react";
+import SEO from "../components/SEO/SEO";
 import ContactForm from "../components/contactform";
 import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
 import { MdMailOutline } from "@react-icons/all-files/md/MdMailOutline";
@@ -10,6 +11,7 @@ import ContactItems from "../styles/contactitems"
 const Contact = () => {
     return (
         <Layout>
+            <SEO title="Discover Kitchen - Contact" />
             <div className="container m-3">
                 <Title title="Contact" />
                 <div className="columns is-4">

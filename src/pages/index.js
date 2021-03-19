@@ -1,6 +1,7 @@
 import * as React from "react";
 import { graphql } from "gatsby";
 import "../styles/mystyles.scss";
+import SEO from "../components/SEO/SEO";
 import Layout from "../styles/layout";
 import CardsComponent from "../components/cards";
 import ReviewCarousel from "../components/reviewcarousel";
@@ -14,6 +15,7 @@ const IndexPage = ({ data }) => {
 
   return (
     <Layout page="home">
+      <SEO title="Discover Kitchen" />
       <div className="container">
 
         <CardsComponent
