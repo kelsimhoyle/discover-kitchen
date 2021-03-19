@@ -7,10 +7,14 @@ require("dotenv").config({
 module.exports = {
     siteMetadata: {
         title: `Discover Kitchen`,
-        description: `Small event catering in Denver, Colorado`,
-        image: "/images/DiscoverKitchen.png"
+        description: `Personal chef and small event catering in Denver, Colorado`,
+        keywords: ["Denver", "Colorado", "personal chef", "event catering", "meal prep", "dinner party", "date night", "dinner", "cook"],
+        image: "/images/DiscoverKitchen.png",
+        siteUrl: `https://discoverkitchen.gtsb.io/`,
+        favicon: "/images/favicon.png"
       },
     plugins: [
+      `gatsby-plugin-react-helmet`,
        `gatsby-plugin-styled-components`,
        `gatsby-plugin-sass`,
       `gatsby-plugin-image`,

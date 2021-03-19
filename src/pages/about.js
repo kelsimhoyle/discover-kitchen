@@ -1,6 +1,7 @@
 import React from "react";
 import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
+import SEO from "../components/SEO/SEO";
 import Layout from "../styles/layout";
 import AboutComponent from "../components/about";
 import Title from "../styles/title";
@@ -11,6 +12,7 @@ const About = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Discover Kitchen - About" />
       <div className="container m-2">
         <Title title={subtitle} />
         <div className="columns m-2">
