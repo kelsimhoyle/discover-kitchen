@@ -1,25 +1,29 @@
 import React from "react";
 import { graphql } from "gatsby";
+import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import Layout from "../styles/layout";
 import AboutComponent from "../components/about";
-import AboutPage from "../styles/aboutpage";
+import Title from "../styles/title";
 
 const About = ({ data }) => {
-    const { subtitle, data: info } = data.pagesJson;
-    const {text, button, image } = info.childDataJson;
+  const { subtitle, data: info } = data.pagesJson;
+  const { text, button, image } = info.childDataJson;
 
-    return (
-      <Layout>
-        <AboutPage>
-        <AboutComponent 
-            title={subtitle}
-            text={text}
-            button={button}
-            image={image}
-         />
-        </AboutPage>
-        </Layout>
-    )
+  return (
+    <Layout>
+      <div className="container m-2">
+        <Title title={subtitle} />
+        <div className="columns m-2">
+          <div className="column">
+            <GatsbyImage image={getImage(image)} alt={subtitle} />
+          </div>
+          <div className="column">
+            <p>{text}</p>
+          </div>
+        </div>
+      </div>
+    </Layout>
+  )
 };
 
 export const AboutQuery = graphql`{
@@ -44,6 +48,6 @@ export const AboutQuery = graphql`{
   }
 }
 `
-  
+
 
 export default About;

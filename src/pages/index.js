@@ -7,10 +7,9 @@ import ReviewCarousel from "../components/reviewcarousel";
 import FeaturedMenu from "../components/featuredmenu";
 
 const IndexPage = ({ data }) => {
-  let { about, services } = data.pagesJson;
+  let {  services } = data.pagesJson;
   let menu = data.allAirtable.edges
 
-  about = about.childDataJson;
   services = services.childDataJson;
 
   return (

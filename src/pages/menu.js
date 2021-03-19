@@ -10,15 +10,16 @@ const Menu = ({ data }) => {
 
     return (
         <Layout>
-            <div className="container mb-3">
+            <div className="container">
                 <Title title="Menu" />
-
+                <div className="section m-2">
                 <FeaturedMenu
                     menu={menu}
                 />
-                <div className="columns">
+                </div>
+                <div className="columns m-2">
                     <div className="column has-text-centered">
-                     <Btn to="/services">View Services</Btn>
+                        <Btn to="/services">View Services</Btn>
                     </div>
                     <div className="column has-text-centered">
                         <Btn to="/contact">Contact Us</Btn>
@@ -28,7 +29,7 @@ const Menu = ({ data }) => {
                     <p className="is-size-4">Full menu coming soon!</p>
                 </div>
 
-                
+
             </div>
         </Layout >
     )
