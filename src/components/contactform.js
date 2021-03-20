@@ -22,7 +22,7 @@ const ContactForm = () => {
 
 
     return (
-        <div className="container box">
+        <>
             <form action="" onSubmit={handleSubmit(onSubmit)} />
 
             <div className="field">
@@ -160,15 +160,14 @@ const ContactForm = () => {
             </button>
             { state.submitted ? (
                 <div className="columns is-justify-content-center">
-                <div className=" box column is-one-third has-text-centered">
-                    <FaCheckCircle className="is-size-1" />
-                    <p className="is-size-3">Thank you!</p>
-                    <p>We will get back to you as soon as possible.</p>
+                    <div className=" box column is-one-third has-text-centered">
+                        <FaCheckCircle className="is-size-1" />
+                        <p className="is-size-3">Thank you!</p>
+                        <p>We will get back to you as soon as possible.</p>
                     </div>
                 </div>
             ) : null}
-        </div>
-
+        </>
     )
 }
 

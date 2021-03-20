@@ -15,7 +15,7 @@ const Services = ({ data }) => {
   return (
     <Layout>
       <div className="container">
-        <Title title="Services" />
+        <Title title="Discover Kitchen - Services" />
         <div className="columns m-2">
           {services.map(service => (
             <ServicesBox
