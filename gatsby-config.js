@@ -53,8 +53,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: `${siteMetadata.siteUrl}`,
-        sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
+        host: `https://discoverkitchen.gatsbyjs.io/`,
+        sitemap: `https://discoverkitchen.gatsbyjs.io//sitemap.xml`,
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
