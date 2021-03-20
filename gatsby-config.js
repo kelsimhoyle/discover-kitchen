@@ -10,7 +10,7 @@ module.exports = {
     description: `Personal chef and small event catering in Denver, Colorado`,
     keywords: ["Denver", "Colorado", "personal chef", "event catering", "meal prep", "dinner party", "date night", "dinner", "cook"],
     image: "/images/DiscoverKitchen.png",
-    siteUrl: `https://discoverkitchen.gtsb.io/`,
+    siteUrl: `https://discoverkitchen.gatsbyjs.io/`,
     favicon: "/images/favicon.png"
   },
   plugins: [
@@ -53,8 +53,8 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: 'https://discoverkitchen.gtsb.io/',
-        sitemap: 'https://discoverkitchen.gtsb.io/sitemap.xml',
+        host: `${siteMetadata.siteUrl}`,
+        sitemap: `${siteMetadata.siteUrl}/sitemap.xml`,
         resolveEnv: () => process.env.GATSBY_ENV,
         env: {
           development: {
