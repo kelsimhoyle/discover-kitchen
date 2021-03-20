@@ -3,12 +3,11 @@ import { graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import SEO from "../components/SEO/SEO";
 import Layout from "../styles/layout";
-import AboutComponent from "../components/about";
 import Title from "../styles/title";
 
 const About = ({ data }) => {
   const { subtitle, data: info } = data.pagesJson;
-  const { text, button, image } = info.childDataJson;
+  const { text, image } = info.childDataJson;
 
   return (
     <Layout>

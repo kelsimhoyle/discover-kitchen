@@ -5,30 +5,31 @@ require("dotenv").config({
 });
 
 module.exports = {
-    siteMetadata: {
-        title: `Discover Kitchen`,
-        description: `Personal chef and small event catering in Denver, Colorado`,
-        keywords: ["Denver", "Colorado", "personal chef", "event catering", "meal prep", "dinner party", "date night", "dinner", "cook"],
-        image: "/images/DiscoverKitchen.png",
-        siteUrl: `https://discoverkitchen.gtsb.io/`,
-        favicon: "/images/favicon.png"
+  siteMetadata: {
+    title: `Discover Kitchen`,
+    description: `Personal chef and small event catering in Denver, Colorado`,
+    keywords: ["Denver", "Colorado", "personal chef", "event catering", "meal prep", "dinner party", "date night", "dinner", "cook"],
+    image: "/images/DiscoverKitchen.png",
+    siteUrl: `https://discoverkitchen.gtsb.io/`,
+    favicon: "/images/favicon.png"
+  },
+  plugins: [
+    `gatsby-plugin-react-helmet`,
+    `gatsby-plugin-robots-txt`,
+    `gatsby-plugin-styled-components`,
+    `gatsby-plugin-sass`,
+    `gatsby-plugin-image`,
+    `gatsby-transformer-remark`,
+    `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        name: `images`,
+        path: path.join(__dirname, `src`, `images`),
       },
-    plugins: [
-      `gatsby-plugin-react-helmet`,
-       `gatsby-plugin-styled-components`,
-       `gatsby-plugin-sass`,
-      `gatsby-plugin-image`,
-      `gatsby-transformer-remark`,
-      `gatsby-plugin-sharp`,
-      `gatsby-transformer-sharp`,
-      {
-        resolve: `gatsby-source-filesystem`,
-        options: {
-          name: `images`,
-          path: path.join(__dirname, `src`, `images`),
-        },
-      },
-      `gatsby-transformer-json`,
+    },
+    `gatsby-transformer-json`,
     {
       resolve: `gatsby-source-filesystem`,
       options: {
@@ -49,5 +50,5 @@ module.exports = {
         ]
       }
     }
-    ]
+  ]
 }
