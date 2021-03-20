@@ -66,6 +66,10 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
                     name: `twitter:description`,
                     content: metaDescription,
                 },
+                {
+                    name: "robots",
+                    content: "max-snippet:-1, max-image-preview:standard"
+                },
             ]
                 .concat(
                     metaImage
