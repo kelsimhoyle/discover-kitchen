@@ -50,15 +50,19 @@ module.exports = {
       }
     },
     {
-      resolve: `gatsby-plugin-robots-txt`,
+      resolve: 'gatsby-plugin-robots-txt',
       options: {
-        query: `{
-          site {
-            siteMetadata {
-              siteUrl
-            }
+        host: 'https://discoverkitchen.gtsb.io/',
+        sitemap: 'https://discoverkitchen.gtsb.io/sitemap.xml',
+        resolveEnv: () => process.env.GATSBY_ENV,
+        env: {
+          development: {
+            policy: [{ userAgent: '*', disallow: ['/'] }]
+          },
+          production: {
+            policy: [{ userAgent: '*', allow: '/' }]
           }
-        }`
+        }
       }
     }
   ]
