@@ -15,7 +15,6 @@ module.exports = {
   },
   plugins: [
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-robots-txt`,
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-sass`,
     `gatsby-plugin-image`,
@@ -48,6 +47,18 @@ module.exports = {
             mapping: { "image": "fileNode" }
           }
         ]
+      }
+    },
+    {
+      resolve: `gatsby-plugin-robots-txt`,
+      options: {
+        query: `{
+          site: MyCustomDataSource {
+            siteMetadata {
+              siteUrl
+            }
+          }
+        }`
       }
     }
   ]
