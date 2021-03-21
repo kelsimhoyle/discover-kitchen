@@ -6,7 +6,7 @@ const Btn = ({ children, to }) => {
     return (
         <Link
             to={to}
-            className="button is-large is-link is-focused"
+            className="button is-large is-medium"
         >
             {children}
             <span className="icon  is-large ml-1">

@@ -3,6 +3,7 @@ import { graphql } from "gatsby";
 import { GiCalendar } from "@react-icons/all-files/gi/GiCalendar";
 import { GiPhone } from "@react-icons/all-files/gi/GiPhone";
 import { GiCookingPot } from "@react-icons/all-files/gi/GiCookingPot";
+import SEO from "../components/SEO/SEO";
 import Btn from "../components/btn";
 import Layout from "../styles/layout";
 import Title from "../styles/title";
@@ -14,8 +15,9 @@ const Services = ({ data }) => {
 
   return (
     <Layout>
+      <SEO title="Discover Kitchen - Services" />
       <div className="container">
-        <Title title="Discover Kitchen - Services" />
+        <Title title="Services" />
         <div className="columns m-2">
           {services.map(service => (
             <ServicesBox
@@ -47,7 +49,7 @@ const Services = ({ data }) => {
             <Btn
               to="/contact"
             >
-              Contact Us
+              Contact
                 </Btn>
           </div>
         </div>

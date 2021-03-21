@@ -23,7 +23,7 @@ const Footer = () => {
                             </div>
                             <div className="column is-one-quarter">
                                 <h4 className="title is-size-4">Let's Connect!</h4>
-                                <ContactItems />
+                                <ContactItems footer={true} />
                             </div>
                         </div>
                     </div>

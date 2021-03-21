@@ -21,10 +21,10 @@ const Menu = ({ data }) => {
                 </div>
                 <div className="columns m-2">
                     <div className="column has-text-centered">
-                        <Btn to="/services">View Services</Btn>
+                        <Btn to="/services">Services</Btn>
                     </div>
                     <div className="column has-text-centered">
-                        <Btn to="/contact">Contact Us</Btn>
+                        <Btn to="/contact">Contact</Btn>
                     </div>
                 </div>
                 <div className="section is-medium has-text-centered	mx-6">

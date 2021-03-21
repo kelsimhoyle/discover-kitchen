@@ -1,5 +1,5 @@
 import React from "react";
-import { graphql } from "gatsby";
+import { Link, graphql} from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import SEO from "../components/SEO/SEO";
 import Layout from "../styles/layout";
@@ -14,12 +14,17 @@ const About = ({ data }) => {
       <SEO title="Discover Kitchen - About" />
       <div className="container m-2">
         <Title title={subtitle} />
-        <div className="columns m-2">
+        <div className="columns m-2 is-vcentered">
           <div className="column">
             <GatsbyImage image={getImage(image)} alt={subtitle} />
           </div>
           <div className="column">
-            <p>{text}</p>
+            <p className="is-size-5 p-6">{text}</p>
+            <div className="has-text-centered">
+              <Link className="button is-link is-focused is-medium m-2" to="/services">Services</Link>
+              <Link className="button is-link is-focused is-medium m-2" to="/contact">Contact</Link>
+            </div>
+
           </div>
         </div>
       </div>

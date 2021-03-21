@@ -3,51 +3,43 @@ import { FaInstagram } from "@react-icons/all-files/fa/FaInstagram";
 import { MdMailOutline } from "@react-icons/all-files/md/MdMailOutline";
 import { FaFacebook } from "@react-icons/all-files/fa/FaFacebook";
 
-const ContactItems = () => (
-    <>
-        <div>
-            <div className="m-2">
-                <a
-                    href="https://instagram.com/discoverkitchen"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="button is-medium is-fullwidth p-2"
-                >
-                    <span className="icon is-medium">
-                        <FaInstagram className="icon" />
-                    </span>
-                    <span>Instagram</span>
-                </a>
-            </div>
-            <div className="m-2">
-                <a
-                    href="https://instagram.com/discoverkitchen"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="button is-medium is-fullwidth p-2"
-                >
-                    <span className="icon is-medium">
-                        <FaFacebook className="icon" />
-                    </span>
-                    <span>Facebook</span>
-                </a>
-            </div>
-            <div className="m-2">
-                <a
-                    href="https://instagram.com/discoverkitchen"
-                    target="_blank"
-                    rel="noreferrer"
-                    className="button is-medium is-fullwidth p-2"
-                >
-                    <span className="icon is-medium">
-                        <MdMailOutline className="icon" />
-                    </span>
-                    <span>E-Mail</span>
-                </a>
-            </div>
-        </div>
+const contact = [
+    {
+        name: "Instagram",
+        href: "https://instagram.com/discoverkitchen",
+        icon: <FaInstagram />
+    },
+    {
+        name: "Facebook",
+        href: "https://instagram.com/discoverkitchen",
+        icon: <FaFacebook />
+    },
+    {
+        name: "E-Mail",
+        href: "https://instagram.com/discoverkitchen",
+        icon: <MdMailOutline />
+    }
+]
 
-    </>
-)
+const ContactItems = ({ footer }) => (
+    <div>
+        {contact.map(c => (
+            <div className="m-2">
+                <a
+                    href={c.href}
+                    target="_blank"
+                    rel="noreferrer"
+                    className={`button is-medium p-2 ${footer ? "is-ghost" : "is-fullwidth"}`}
+                >
+                    <span className="icon is-medium">
+                        {c.icon}
+                    </span>
+                    <span>{c.name}</span>
+                </a>
+            </div>
+        ))}
+    </div>
+
+);
 
 export default ContactItems;
