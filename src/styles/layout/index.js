@@ -11,11 +11,8 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children, ...props }) => {
-  const pageComponent = props.path;
-  console.log(pageComponent);
-
-  if (pageComponent === "/") {
+const Layout = ({ children, pageContext}) => {
+  if (pageContext.layout === "home") {
     return (
       <ThemeProvider theme={theme} >
         <HomeLayout>
