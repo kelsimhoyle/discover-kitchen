@@ -1,8 +1,8 @@
 import React, { useRef, useCallback } from "react";
 import { useInView } from 'react-intersection-observer';
-import Landing from "../components/landing";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Landing from "../../components/landing";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 
 const HomeLayout = ({ children }) => {
     const ref = useRef();

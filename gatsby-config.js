@@ -65,6 +65,12 @@ module.exports = {
           }
         }
       }
-    }
+    },
+    {
+      resolve: `gatsby-plugin-layout`,
+      options: {
+        component: require.resolve(`./src/styles/layout`),
+      },
+    },
   ]
 }

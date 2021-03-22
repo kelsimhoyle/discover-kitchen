@@ -1,14 +1,13 @@
 import React from "react";
 import SEO from "../components/SEO/SEO";
 import ContactForm from "../components/contactform";
-import Layout from "../styles/layout";
 import Title from "../styles/title";
 import ContactItems from "../components/contactitems"
 
 
 const Contact = () => {
     return (
-        <Layout>
+        <>
             <SEO title="Discover Kitchen - Contact" />
             <div className="container m-3">
                 <Title title="Contact" />
@@ -25,7 +24,7 @@ const Contact = () => {
                     </div>
                 </div>
             </div>
-        </Layout>
+        </>
     )
 };
 

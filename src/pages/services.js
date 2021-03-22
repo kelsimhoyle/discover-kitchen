@@ -5,7 +5,6 @@ import { GiPhone } from "@react-icons/all-files/gi/GiPhone";
 import { GiCookingPot } from "@react-icons/all-files/gi/GiCookingPot";
 import SEO from "../components/SEO/SEO";
 import Btn from "../components/btn";
-import Layout from "../styles/layout";
 import Title from "../styles/title";
 import ServicesBox from "../components/servicesbox";
 
@@ -14,7 +13,7 @@ const Services = ({ data }) => {
   const services = pageData.data.childDataJson.items;
 
   return (
-    <Layout>
+    <>
       <SEO title="Discover Kitchen - Services" />
       <div className="container">
         <Title title="Services" />
@@ -57,7 +56,7 @@ const Services = ({ data }) => {
 
       </div>
 
-    </Layout>
+    </>
   )
 }
 

@@ -2,19 +2,18 @@ import * as React from "react";
 import { graphql } from "gatsby";
 import "../styles/mystyles.scss";
 import SEO from "../components/SEO/SEO";
-import Layout from "../styles/layout";
 import CardsComponent from "../components/cards";
 import ReviewCarousel from "../components/reviewcarousel";
 import FeaturedMenu from "../components/featuredmenu";
 
 const IndexPage = ({ data }) => {
-  let {  services } = data.pagesJson;
+  let { services } = data.pagesJson;
   let menu = data.allAirtable.edges
 
   services = services.childDataJson;
 
   return (
-    <Layout page="home">
+    <>
       <SEO title="Discover Kitchen" />
       <div className="container">
 
@@ -28,9 +27,9 @@ const IndexPage = ({ data }) => {
         <div className="section is-medium is-desktop">
           <FeaturedMenu menu={menu} viewMore={true} />
         </div>
-        
+
       </div>
-    </Layout>
+    </>
   )
 }
 

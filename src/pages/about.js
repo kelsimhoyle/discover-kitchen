@@ -1,8 +1,7 @@
 import React from "react";
-import { Link, graphql} from "gatsby";
+import { Link, graphql } from "gatsby";
 import { GatsbyImage, getImage } from "gatsby-plugin-image"
 import SEO from "../components/SEO/SEO";
-import Layout from "../styles/layout";
 import Title from "../styles/title";
 
 const About = ({ data }) => {
@@ -10,7 +9,7 @@ const About = ({ data }) => {
   const { text, image } = info.childDataJson;
 
   return (
-    <Layout>
+    <>
       <SEO title="Discover Kitchen - About" />
       <div className="container m-2">
         <Title title={subtitle} />
@@ -28,7 +27,7 @@ const About = ({ data }) => {
           </div>
         </div>
       </div>
-    </Layout>
+    </>
   )
 };
 

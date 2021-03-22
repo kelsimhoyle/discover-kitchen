@@ -1,6 +1,5 @@
 import React from "react";
 import { graphql } from "gatsby";
-import Layout from "../styles/layout";
 import SEO from "../components/SEO/SEO";
 import Title from "../styles/title";
 import Btn from "../components/btn";
@@ -10,7 +9,7 @@ const Menu = ({ data }) => {
     let menu = data.allAirtable.edges
 
     return (
-        <Layout>
+        <>
             <SEO title="Discover Kitchen - Menu" />
             <div className="container">
                 <Title title="Menu" />
@@ -33,7 +32,7 @@ const Menu = ({ data }) => {
 
 
             </div>
-        </Layout >
+        </>
     )
 }
 

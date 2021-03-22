@@ -1,8 +1,8 @@
 import React from "react";
-import { theme } from "../theme/global-style";
+import { theme } from "../../theme/global-style";
 import { ThemeProvider, createGlobalStyle } from "styled-components";
-import Header from "../components/header";
-import Footer from "../components/footer";
+import Header from "../../components/header";
+import Footer from "../../components/footer";
 import HomeLayout from "./homelayout";
 
 const GlobalStyle = createGlobalStyle`
@@ -11,8 +11,11 @@ const GlobalStyle = createGlobalStyle`
   }
 `
 
-const Layout = ({ children, page }) => {
-  if (page === "home") {
+const Layout = ({ children, ...props }) => {
+  const pageComponent = props.path;
+  console.log(pageComponent);
+
+  if (pageComponent === "/") {
     return (
       <ThemeProvider theme={theme} >
         <HomeLayout>
