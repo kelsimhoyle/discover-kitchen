@@ -57,15 +57,7 @@ module.exports = {
       options: {
         host: `https://discoverkitchen.gatsbyjs.io/`,
         sitemap: `https://discoverkitchen.gatsbyjs.io/sitemap.xml`,
-        resolveEnv: () => process.env.GATSBY_ENV,
-        env: {
-          development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }]
-          },
-          production: {
-            policy: [{ userAgent: '*', allow: '/' }]
-          }
-        }
+        policy: [{ userAgent: '*', allow: '/' }]
       }
     },
     {
