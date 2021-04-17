@@ -57,7 +57,16 @@ module.exports = {
       options: {
         host: `https://discoverkitchen.gatsbyjs.io`,
         sitemap: `https://discoverkitchen.gatsbyjs.io/sitemap.xml`,
-        policy: [{ userAgent: '*', allow: '/' }]
+        policy: [{
+          userAgent: "Googlebot",
+          allow: "/",
+          crawlDelay: 2,
+        },
+        {
+          userAgent: "*",
+          allow: "/",
+          crawlDelay: 10
+        }]
       }
     },
     {
