@@ -60,12 +60,10 @@ module.exports = {
         policy: [{
           userAgent: "Googlebot",
           allow: "/",
-          crawlDelay: 2,
         },
         {
           userAgent: "*",
           allow: "/",
-          crawlDelay: 10
         }]
       }
     },
