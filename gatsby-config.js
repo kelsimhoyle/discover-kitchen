@@ -55,7 +55,7 @@ module.exports = {
     {
       resolve: 'gatsby-plugin-robots-txt',
       options: {
-        host: `https://discoverkitchen.gatsbyjs.io/`,
+        host: `https://discoverkitchen.gatsbyjs.io`,
         sitemap: `https://discoverkitchen.gatsbyjs.io/sitemap.xml`,
         policy: [{ userAgent: '*', allow: '/' }]
       }
