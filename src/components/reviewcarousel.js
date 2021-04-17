@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "bulma-carousel/src/sass/index.sass";
 import ReviewCard from "./reviewcard";
-import Reviews from "../data/reviews.json";
+import { StaticQuery, graphql } from "gatsby"
 
 
 const bulmaCarousel = (() => {
@@ -16,34 +16,54 @@ const ReviewCarousel = () => {
     useEffect(() => {
 
 
-            bulmaCarousel.attach("#review", {
-                slidesToScroll: 1,
-                slidesToShow: 3,
-                pagination: false,
-                    });
-    
+        bulmaCarousel.attach("#review", {
+            slidesToScroll: 1,
+            slidesToShow: 2,
+            pagination: false,
+        });
 
-       
+
+
 
     }, [])
 
 
 
     return (
-        <div className="section is-medium box has-text-centered	">
-        <h3 className="title mb-2">Testimonials</h3>
-                <div className="carousel is-clipped	mt-4" data-slides-to-scroll="1" id="review">
-                    {Reviews.map(review => (
-                        <div className={`item-${review.id}`}>
-                            <ReviewCard
-                                name={review.name}
-                                review={review.review}
-                                key={review.id}
-                            />
-                        </div>
-                    ))}
+
+        <StaticQuery
+            query={graphql`
+            query Reviews {
+                allAirtable(filter: {table: {eq: "Reviews"}, data: {status: {eq: "Post"}}}) {
+                    nodes {
+                      id
+                      data {
+                        name
+                        review
+                      }
+                    }
+                  }
+            }
+              `}
+            render={data => (
+                <div className="section is-medium box has-text-centered	">
+                    <h3 className="title mb-2">Testimonials</h3>
+                    <div className="carousel is-clipped	mt-4" data-slides-to-scroll="1" id="review">
+                        {data.allAirtable.nodes.map(review => (
+                            <div className={`item-${review.id}`}>
+                                <ReviewCard
+                                    name={review.data.name}
+                                    review={review.data.review}
+                                    key={review.id}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
-        </div>
+            )}
+
+        />
+
     );
 }
 

@@ -1,5 +1,5 @@
 import React from "react";
-import SEO from "../components/SEO/SEO";
+import Seo from "../components/SEO/SEO";
 import ContactForm from "../components/contactform";
 import Title from "../styles/title";
 import ContactItems from "../components/contactitems"
@@ -8,7 +8,7 @@ import ContactItems from "../components/contactitems"
 const Contact = () => {
     return (
         <>
-            <SEO title="Discover Kitchen - Contact" />
+            <Seo title="Discover Kitchen - Contact" />
             <div className="container m-3">
                 <Title title="Contact" />
                 <div className="columns is-centered">

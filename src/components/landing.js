@@ -1,11 +1,25 @@
 import React from "react";
-import { StaticImage } from "gatsby-plugin-image"
+import { StaticImage } from "gatsby-plugin-image";
+import { StaticQuery, graphql } from "gatsby"
 import StyledLanding from "../styles/styledlanding";
 
 const Landing = () => {
 
     return (
-        <>
+        <StaticQuery
+        query={graphql`
+        query MainAbout {
+            airtable(data: {page: {eq: "Home"}, name: {eq: "Main About"}}) {
+              id
+              data {
+                content
+              }
+            }
+          }
+          
+        `}          
+        render={data => (
+            <>
             <StyledLanding>
                 <div className="image">
                     <StaticImage
@@ -37,9 +51,11 @@ g                        objectFit="cover"
                 </div>
             </StyledLanding>
             <div className="section is-medium has-text-centered	mx-6">
-                <p className="is-size-4">Discover Kitchen is a Denver based personal chef and small businesses caterer. Providing meal solutions for customers to relieve the stress of planning. etc. etc...</p>
+                <p className="is-size-4"> {data.airtable.data.content} </p>
             </div>
         </>
+        )} />
+       
     )
 
 }

@@ -28,13 +28,6 @@ module.exports = {
         path: path.join(__dirname, `src`, `images`),
       },
     },
-    `gatsby-transformer-json`,
-    {
-      resolve: `gatsby-source-filesystem`,
-      options: {
-        path: `./src/data`,
-      },
-    },
     {
       resolve: `gatsby-source-airtable`,
       options: {
@@ -43,9 +36,18 @@ module.exports = {
         tables: [
           {
             baseId: process.env.AIRTABLE_BASE_ID,
-            tableName: process.env.AIRTABLE_TABLE_NAME,
+            tableName: "Menu",
             mapping: { "image": "fileNode" }
-          }
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: "Reviews"
+          },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: "Site Data",
+            mapping: { "image": "fileNode" }
+          },
         ]
       }
     },

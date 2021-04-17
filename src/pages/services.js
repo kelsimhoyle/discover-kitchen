@@ -3,27 +3,26 @@ import { graphql } from "gatsby";
 import { GiCalendar } from "@react-icons/all-files/gi/GiCalendar";
 import { GiPhone } from "@react-icons/all-files/gi/GiPhone";
 import { GiCookingPot } from "@react-icons/all-files/gi/GiCookingPot";
-import SEO from "../components/SEO/SEO";
+import Seo from "../components/SEO/SEO";
 import Btn from "../components/btn";
 import Title from "../styles/title";
 import ServicesBox from "../components/servicesbox";
 
 const Services = ({ data }) => {
-  const pageData = data.pagesJson;
-  const services = pageData.data.childDataJson.items;
+  const services = data.allAirtable.edges;
 
   return (
     <>
-      <SEO title="Discover Kitchen - Services" />
+      <Seo title="Discover Kitchen - Services" />
       <div className="container">
         <Title title="Services" />
         <div className="columns m-2">
           {services.map(service => (
             <ServicesBox
-              title={service.title}
-              image={service.image}
-              alt={service.alt}
-              blurb={service.blurb}
+              title={service.node.data.name}
+              image={service.node.data.image.localFiles[0]}
+              alt={service.node.data.name}
+              blurb={service.node.data.content}
             />
           ))}
         </div>
@@ -61,32 +60,28 @@ const Services = ({ data }) => {
 }
 
 export const ServicesQuery = graphql`{
-
-        pagesJson(title: {eq: "Services"}) {
-          subtitle
-          title
-          data {
-            childDataJson {
-              id
-              items {
-                alt
-                blurb
-                title
-                image {
-                  childImageSharp {
-                    gatsbyImageData( 
-                      placeholder: BLURRED,
-                      width: 600,
-                      height: 700,
-                      transformOptions: {fit: COVER, cropFocus: CENTER}
-                      )
-                  }
-                }
+  allAirtable(filter: {table: {eq: "Site Data"}, data: {page: {in: "Services"}}}) {
+    edges {
+      node {
+        id
+        data {
+          name
+          image {
+            localFiles {
+              childImageSharp {
+                gatsbyImageData(
+                  width: 600
+                  height: 700
+                  placeholder: BLURRED
+                  transformOptions: {fit: COVER, cropFocus: CENTER}
+                )
               }
             }
           }
         }
-
+      }
+    }
+  }
 }`
 
 

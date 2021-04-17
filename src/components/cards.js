@@ -2,18 +2,20 @@ import React from "react";
 import Btn from "../components/btn";
 import Card from "./card";
 
-const CardsComponent = ({ title, subtitle, items, url }) => {
+const CardsComponent = ( { title, items, url }) => {
+
     return (
         <div className="section is-medium is-desktop">
             <h3 className="title">{title}</h3>
             <div className="columns">
                 {items.map(item => (
+                    
                     <Card
-                        key={item.title}
-                        title={item.title}
-                        image={item.image}
-                        alt={item.alt}
-                        blurb={item.blurb}
+                        key={item.node.data.name}
+                        title={item.node.data.name}
+                        image={item.node.data.image}
+                        alt={item.node.data.name}
+                        blurb={item.node.data.content}
                         sectionName={title}
                     />
                 ))}

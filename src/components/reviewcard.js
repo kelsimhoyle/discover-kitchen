@@ -39,14 +39,14 @@ const ReviewCard = ({ review, name }) => {
 
         <Card>
             <div className="quote">
-            <FaQuoteLeft />
+                <FaQuoteLeft />
             </div>
             <p >
                 {review}
             </p>
-            <p>
-                {name} - Denver
-    </p>
+            <p className="has-text-weight-semibold	">
+                - {name}
+            </p>
         </Card>
 
     )

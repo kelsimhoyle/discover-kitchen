@@ -4,7 +4,7 @@ import { Helmet } from "react-helmet"
 import { useStaticQuery, graphql } from "gatsby"
 import faviconLinks from "./faviconlist";
 
-function SEO({ description, lang, meta, image: metaImage, title }) {
+function Seo({ description, lang, meta, image: metaImage, title }) {
     const { site } = useStaticQuery(
         graphql`
       query {
@@ -103,13 +103,13 @@ function SEO({ description, lang, meta, image: metaImage, title }) {
     )
 }
 
-SEO.defaultProps = {
+Seo.defaultProps = {
     lang: `en`,
     meta: [],
     description: ``,
 }
 
-SEO.propTypes = {
+Seo.propTypes = {
     description: PropTypes.string,
     lang: PropTypes.string,
     meta: PropTypes.arrayOf(PropTypes.object),
@@ -121,4 +121,4 @@ SEO.propTypes = {
     }),
 }
 
-export default SEO;
+export default Seo;
