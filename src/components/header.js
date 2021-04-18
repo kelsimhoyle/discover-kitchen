@@ -27,6 +27,7 @@ const Header = () => {
                         aria-label="menu"
                         aria-expanded="false"
                         onClick={() => setisActive(!isActive)}
+                        onKeyDown={() => setisActive(!isActive)}
                         tabIndex={0}
                     >
                         <span aria-hidden="true"></span>
@@ -36,7 +37,12 @@ const Header = () => {
                 </div>
 
                 <div id="dk-nav" className={`navbar-menu ${isActive ? 'is-active' : ''}`} role="navigation">
-                    <div className="navbar-end" onClick={() => setisActive(false)}>
+                    <div className="navbar-end"
+                        onClick={() => setisActive(false)}
+                        onKeyDown={() => setisActive(false)}
+                        role="button"
+                        tabIndex={0}
+                    >
                         <NavLinks />
                     </div>
 

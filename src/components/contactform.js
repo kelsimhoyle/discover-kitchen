@@ -26,7 +26,7 @@ const ContactForm = () => {
             <form action="" onSubmit={handleSubmit(onSubmit)} />
 
             <div className="field">
-                <label for="name" className="label is-size-4 has-text-weight-light"></label>
+                <label for="name" className="label is-size-4 has-text-weight-light">
                 <div className="control has-icons-left">
                     <input
                         type="text"
@@ -41,6 +41,8 @@ const ContactForm = () => {
                         <FaUser />
                     </span>
                 </div>
+                </label>
+
 
                 <ErrorMessage
                     errors={errors}
@@ -51,7 +53,7 @@ const ContactForm = () => {
 
 
             <div className="field">
-                <label for="email" className="label is-size-4 has-text-weight-light"></label>
+                <label for="email" className="label is-size-4 has-text-weight-light">
                 <div className="control has-icons-left">
                     <input
                         type="email"
@@ -78,6 +80,7 @@ const ContactForm = () => {
                     ) : null}
 
                 </div>
+                </label>
 
                 <ErrorMessage
                     errors={errors}
@@ -88,7 +91,7 @@ const ContactForm = () => {
 
             <div className="field is-horizontal">
                 <div className="field-label">
-                    <label className="label">Services interest in:</label>
+                    <label className="label">Services interested in:</label>
                 </div>
                 <div className="field-body">
                     <div className="field">
@@ -140,7 +143,7 @@ const ContactForm = () => {
             </div>
 
             <div className="field">
-                <label for="message" className="label is-size-4 has-text-weight-light"></label>
+                <label for="message" className="label is-size-4 has-text-weight-light">
                 <textarea
                     name="message"
                     id="message"
@@ -149,6 +152,7 @@ const ContactForm = () => {
                     className="textarea is-medium"
                     placeholder="Message">
                 </textarea>
+                </label>
             </div>
 
             <button

@@ -9,7 +9,7 @@ const FeaturedMenu = ({ menu, viewMore }) => {
             <div className="columns">
                 {menu.map(item => (
                     <MenuCard
-                        key={item.node.data.id}
+                        key={item.node.id}
                         title={item.node.data.item}
                         image={item.node.data.image.localFiles[0]}
                         description={item.node.data.description}

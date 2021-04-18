@@ -3,9 +3,9 @@ import styled from "styled-components";
 import { FaQuoteLeft } from "@react-icons/all-files/fa/FaQuoteLeft";
 
 const Card = styled.div`
-width: 70%;
+width: 85%;
 margin-left: 1.25rem;
-    min-height: 300px;
+    min-height: 525px;
     display: flex; 
     flex-direction: column;
     justify-content: center;
@@ -30,7 +30,10 @@ margin-left: 1.25rem;
         background-color: red;
         color: white;
         font-size: 1.75rem;
+    }
 
+    @media ${props => props.theme.device.laptop} {
+        min-height: 300px;
     }
 `
 

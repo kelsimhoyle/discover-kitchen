@@ -11,7 +11,7 @@ const CardsComponent = ( { title, items, url }) => {
                 {items.map(item => (
                     
                     <Card
-                        key={item.node.data.name}
+                        key={item.node.id}
                         title={item.node.data.name}
                         image={item.node.data.image}
                         alt={item.node.data.name}

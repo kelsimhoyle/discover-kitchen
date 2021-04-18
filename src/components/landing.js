@@ -36,7 +36,7 @@ const Landing = () => {
                             "left": "50%",
                             "transform": "translate(-50%, -50%)"
                         }}
-                        trim={true}
+                        trim="true"
                     />
                 </div>
                 <div className="dk-logo">

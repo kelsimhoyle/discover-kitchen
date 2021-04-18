@@ -16,13 +16,13 @@ const Footer = () => {
                     <div className="column is-three-quarters">
                         <div className="columns">
                             <div className="column is-align-items-center is-one-quarter is-offset-one-quarter">
-                                <h4 className="title is-size-4">Site Links</h4>
+                                <h4 className="title is-size-5">Site Links</h4>
                                 <div className="is-flex-direction-column">
                                     <NavLinks footer={true} />
                                 </div>
                             </div>
                             <div className="column is-one-quarter">
-                                <h4 className="title is-size-4">Let's Connect!</h4>
+                                <h4 className="title is-size-5">Let's Connect!</h4>
                                 <ContactItems footer={true} />
                             </div>
                         </div>

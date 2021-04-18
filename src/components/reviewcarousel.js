@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import "bulma-carousel/src/sass/index.sass";
 import ReviewCard from "./reviewcard";
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql } from "gatsby";
 
 
 const bulmaCarousel = (() => {

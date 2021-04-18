@@ -7,10 +7,10 @@ const NavLinks = ({ footer }) => {
   return (
     <>
       {pages.map(page => (
-        <div className="m-2">
+        <div className="m-2" key={page}
+        >
           <Link
             to={`/${page === "Home" ? "" : page.toLowerCase()}`}
-            key={page}
             className={`${footer ? null : "navbar-item"}  p-2`}
           >
             {page}

@@ -10,9 +10,9 @@ const About = ({ data }) => {
   return (
     <>
       <Seo title="Discover Kitchen - About" />
-      <div className="container m-2">
+      <div className="container">
         <Title title="About Discover Kitchen" />
-        <div className="columns m-2 is-vcentered">
+        <div className="columns m-2 is-vcentered is-centered">
           <div className="column">
             <GatsbyImage image={getImage(data.airtable.data.image.localFiles[0])} alt="About Discover Kitcehn" />
           </div>
@@ -25,7 +25,9 @@ const About = ({ data }) => {
 
           </div>
         </div>
-        <ReviewCarousel />
+        <div className="m-2">
+          <ReviewCarousel />
+        </div>
       </div>
     </>
   )

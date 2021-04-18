@@ -23,6 +23,7 @@ const Services = ({ data }) => {
               image={service.node.data.image.localFiles[0]}
               alt={service.node.data.name}
               blurb={service.node.data.content}
+              key={service.node.id}
             />
           ))}
         </div>
@@ -66,6 +67,7 @@ export const ServicesQuery = graphql`{
         id
         data {
           name
+          content
           image {
             localFiles {
               childImageSharp {

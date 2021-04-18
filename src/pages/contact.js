@@ -9,7 +9,7 @@ const Contact = () => {
     return (
         <>
             <Seo title="Discover Kitchen - Contact" />
-            <div className="container m-3">
+            <div className="container m-4">
                 <Title title="Contact" />
                 <div className="columns is-centered">
                     <div className="column is-half box m-2">
