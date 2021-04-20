@@ -57,13 +57,10 @@ module.exports = {
       options: {
         host: `https://discoverkitchen.gatsbyjs.io`,
         sitemap: `https://discoverkitchen.gatsbyjs.io/sitemap.xml`,
-        policy: [{
-          userAgent: "Googlebot",
-          allow: "/",
-        },
+        policy: [
         {
           userAgent: "*",
-          allow: "/",
+          disallow: "/",
         }]
       }
     },

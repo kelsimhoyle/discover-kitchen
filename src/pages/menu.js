@@ -6,7 +6,7 @@ import Btn from "../components/btn";
 import FeaturedMenu from "../components/featuredmenu";
 
 const Menu = ({ data }) => {
-    let menu = data.allAirtable.edges
+    let menu = data.allAirtable.edges;
 
     return (
         <>

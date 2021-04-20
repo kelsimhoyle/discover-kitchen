@@ -9,7 +9,14 @@ import Title from "../styles/title";
 import ServicesBox from "../components/servicesbox";
 
 const Services = ({ data }) => {
-  const services = data.allAirtable.edges;
+  const services = data.services.edges;
+  const steps = data.steps.edges;
+
+  const icons = {
+    "Step 1": <GiPhone className="is-size-1" />,
+    "Step 2": <GiCalendar className="is-size-1" />,
+    "Step 3": <GiCookingPot className="is-size-1" />
+  }
 
   return (
     <>
@@ -30,18 +37,13 @@ const Services = ({ data }) => {
         <div className="section is-medium has-text-centered	mx-6">
           <h4 className="title">Let's get cooking!</h4>
           <div className="columns">
-            <div className="column box has-text-centered m-3">
-              <GiPhone className="is-size-1" />
-              <p className="m-2 is-size-5">First, we will do a discovery call to learn about your needs and how we can help you.</p>
-            </div>
-            <div className="column box has-text-centered m-3">
-              <GiCalendar className="is-size-1" />
-              <p className="m-2 is-size-5">We will schedule a time for services. Then we will send over a menu and contract for approval.</p>
-            </div>
-            <div className="column box has-text-centered m-3">
-              <GiCookingPot className="is-size-1" />
-              <p className="m-2 is-size-5">We do the ingredient shopping and come to your kitchen to complete the cooking!</p>
-            </div>
+            {steps.map(step => (
+              <div className="column box has-text-centered m-3">
+                {icons[step.node.data.name]}
+                <p className="m-2 is-size-5">{step.node.data.content}</p>
+              </div>
+            ))}
+
           </div>
 
           <div className="has-text-centered">
@@ -61,7 +63,9 @@ const Services = ({ data }) => {
 }
 
 export const ServicesQuery = graphql`{
-  allAirtable(filter: {table: {eq: "Site Data"}, data: {page: {in: "Services"}}}) {
+  services: allAirtable(
+    filter: {table: {eq: "Site Data"}, data: {page: {in: "Services"}, function: {in: "Services List"}}}
+  ) {
     edges {
       node {
         id
@@ -80,6 +84,19 @@ export const ServicesQuery = graphql`{
               }
             }
           }
+        }
+      }
+    }
+  }
+  steps: allAirtable(
+    filter: {table: {eq: "Site Data"}, data: {page: {in: "Services"}, function: {in: "Steps"}}}
+  ) {
+    edges {
+      node {
+        id
+        data {
+          name
+          content
         }
       }
     }

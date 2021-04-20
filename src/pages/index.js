@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
 
 export const HomeQuery = graphql`{
   services: allAirtable(
-    filter: {table: {in: "Site Data"}, data: {page: {in: "Services"}}}
+    filter: {table: {eq: "Site Data"}, data: {page: {in: "Services"}, function: {in: "Services List"}}}
   ) {
     edges {
       node {
