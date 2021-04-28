@@ -17,9 +17,9 @@ const ReviewCarousel = () => {
 
 
         bulmaCarousel.attach("#review", {
-            slidesToScroll: 1,
+            slidesToScroll: 2,
             slidesToShow: 2,
-            pagination: false,
+            loop: true
         });
 
 
@@ -49,8 +49,8 @@ const ReviewCarousel = () => {
                 <div className="section is-medium box has-text-centered	">
                     <h3 className="title mb-2">Testimonials</h3>
                     <div className="carousel is-clipped	mt-4" data-slides-to-scroll="1" id="review">
-                        {data.allAirtable.nodes.map(review => (
-                            <div className={`item-${review.id}`}>
+                        {data.allAirtable.nodes.map((review, i) => (
+                            <div className={`item-${i + 1}`}>
                                 <ReviewCard
                                     name={review.data.name}
                                     review={review.data.review}
