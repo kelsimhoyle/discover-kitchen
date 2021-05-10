@@ -3,6 +3,7 @@ import Btn from "../components/btn";
 import MenuCard from "./menucard";
 
 const FeaturedMenu = ({ menu, viewMore }) => {
+    console.log(menu)
     return (
         <>
             <h3 className="title has-text-centered">Featured Menu</h3>
