@@ -56,7 +56,7 @@ g                        objectFit="cover"
             </StyledLanding>
             <div className="section is-medium has-text-centered	mx-6 is-size-4"
             dangerouslySetInnerHTML={{
-                __html: data.airtable.data.content.childMarkdownRemark.html,
+                __html: data.airtable.data.content.childMarkdownRemark.html
               }}
             />
         </>
