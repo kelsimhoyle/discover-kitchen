@@ -39,7 +39,7 @@ const About = ({ data }) => {
 };
 
 export const AboutQuery = graphql`{
-  main: airtable(data: {page: {eq: "About"}}) {
+  main: airtable(data: {page: {eq: "About"}, function: {eq: "Content"}}) {
     id
     data {
       name

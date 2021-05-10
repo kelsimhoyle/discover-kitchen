@@ -66,7 +66,7 @@ export const HomeQuery = graphql`{
       node {
         id
         data {
-          name
+          item
           page
           content {
             childMarkdownRemark {

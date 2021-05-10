@@ -5,11 +5,13 @@ import { FaEnvelope } from "@react-icons/all-files/fa/FaEnvelope";
 import { FaUser } from "@react-icons/all-files/fa/FaUser";
 import { FaCheckCircle } from "@react-icons/all-files/fa/FaCheckCircle";
 import { FaExclamationTriangle } from "@react-icons/all-files/fa/FaExclamationTriangle";
+import Checkbox from "./checkbox";
 
 import addContact from "../functions/addContact";
 
 const ContactForm = () => {
-    const { register, handleSubmit, errors } = useForm();
+    const fields = ["Small event catering", "Personal Chef", "Other"]
+    const { register, handleSubmit, formState: { errors } } = useForm();
     const [state, setState] = useState({
         submitting: false,
         submitted: false
@@ -23,24 +25,24 @@ const ContactForm = () => {
 
     return (
         <>
-            <form action="" onSubmit={handleSubmit(onSubmit)} />
+            <form onSubmit={handleSubmit(onSubmit)} />
 
             <div className="field">
                 <label for="name" className="label is-size-4 has-text-weight-light">
-                <div className="control has-icons-left">
-                    <input
-                        type="text"
-                        name="name"
-                        className="input"
-                        placeholder="Name"
-                        id="name"
-                        autofocus
-                        ref={register({ required: "Name is required" })}
-                    />
-                    <span className="icon is-left">
-                        <FaUser />
-                    </span>
-                </div>
+                    <div className="control has-icons-left">
+                        <input
+                            type="text"
+                            name="name"
+                            className="input"
+                            placeholder="Name"
+                            id="name"
+                            autofocus
+                            {...register("name", { required: true })}
+                        />
+                        <span className="icon is-left">
+                            <FaUser />
+                        </span>
+                    </div>
                 </label>
 
 
@@ -54,32 +56,32 @@ const ContactForm = () => {
 
             <div className="field">
                 <label for="email" className="label is-size-4 has-text-weight-light">
-                <div className="control has-icons-left">
-                    <input
-                        type="email"
-                        name="email"
-                        id="email"
-                        className="input"
-                        placeholder="Email"
-                        ref={register({
-                            required: "E-mail is required",
-                            pattern: {
-                                value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
-                                message: "Please enter a valid e-mail address"
-                            }
-                        })}
+                    <div className="control has-icons-left">
+                        <input
+                            type="email"
+                            name="email"
+                            id="email"
+                            className="input"
+                            placeholder="Email"
+                            {...register("email", {
+                                required: "E-mail is required",
+                                pattern: {
+                                    value: /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$/,
+                                    message: "Please enter a valid e-mail address"
+                                }
+                            })}
 
-                    />
-                    <span className="icon is-left">
-                        <FaEnvelope />
-                    </span>
-                    {errors.email ? (
-                        <span className="icon is-small is-right">
-                            <FaExclamationTriangle />
+                        />
+                        <span className="icon is-left">
+                            <FaEnvelope />
                         </span>
-                    ) : null}
+                        {errors.email ? (
+                            <span className="icon is-small is-right">
+                                <FaExclamationTriangle />
+                            </span>
+                        ) : null}
 
-                </div>
+                    </div>
                 </label>
 
                 <ErrorMessage
@@ -88,70 +90,34 @@ const ContactForm = () => {
                     render={({ message }) => <p className="help is-danger">{message}</p>}
                 />
             </div>
-
             <div className="field is-horizontal">
                 <div className="field-label">
                     <label className="label">Services interested in:</label>
                 </div>
                 <div className="field-body">
-                    <div className="field">
-                        <div className="control">
-                            <label className="checkbox">
-                                <input
-                                    type="checkbox"
-                                    id="catering"
-                                    name="services"
-                                    value="catering"
-                                    ref={register}
+                    {fields.map(item => (
+                        <Checkbox
+                            register={register}
+                            value={item}
 
-                                />
-                                    Small Event Catering
-                             </label>
-                        </div>
-                    </div>
-                    <div className="field">
-                        <div className="control">
-                            <label className="checkbox">
-                                <input
-                                    type="checkbox"
-                                    id="chef"
-                                    name="services"
-                                    value="chef"
-                                    ref={register}
 
-                                />
-                                    Personal Chef
-                             </label>
-                        </div>
-                    </div>
+                        />
+                    ))}
                 </div>
-                <div className="field">
-                    <div className="control">
-                        <label className="checkbox">
-                            <input
-                                type="checkbox"
-                                id="other"
-                                name="services"
-                                value="other"
-                                ref={register}
 
-                            />
-                                    Other
-                             </label>
-                    </div>
-                </div>
             </div>
+
 
             <div className="field">
                 <label for="message" className="label is-size-4 has-text-weight-light">
-                <textarea
-                    name="message"
-                    id="message"
-                    ref={register}
-                    rows="5"
-                    className="textarea is-medium"
-                    placeholder="Message">
-                </textarea>
+                    <textarea
+                        name="message"
+                        id="message"
+                        {...register("message")}
+                        rows="5"
+                        className="textarea is-medium"
+                        placeholder="Message">
+                    </textarea>
                 </label>
             </div>
 
