@@ -5,6 +5,7 @@ import { FaQuoteLeft } from "@react-icons/all-files/fa/FaQuoteLeft";
 const Card = styled.div`
 width: 85%;
 margin-left: 1.25rem;
+margin-top: .5rem;
     min-height: 525px;
     display: flex; 
     flex-direction: column;
@@ -20,8 +21,8 @@ margin-left: 1.25rem;
     .quote {
         position: absolute;
         top: 0;
-        width: 50px;
-        height: 50px;
+        width: 40px;
+        height: 40px;
         border-radius: 50%;
         display: flex;
         flex-direction: column;
@@ -29,7 +30,7 @@ margin-left: 1.25rem;
         align-items: center;
         background-color: red;
         color: white;
-        font-size: 1.75rem;
+        font-size: 1.25rem;
     }
 
     @media ${props => props.theme.device.laptop} {

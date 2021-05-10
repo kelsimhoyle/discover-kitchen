@@ -5,7 +5,7 @@ import MenuCard from "./menucard";
 const FeaturedMenu = ({ menu, viewMore }) => {
     return (
         <>
-            <h3 className="title">Featured Menu</h3>
+            <h3 className="title has-text-centered">Featured Menu</h3>
             <div className="columns">
                 {menu.map(item => (
                     <MenuCard

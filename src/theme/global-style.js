@@ -20,7 +20,8 @@ export const theme = {
       blue: "#457b9d",
       darkBlue: "#1d3557",
       darkGrey: "#101010",
-      lightGrey: "#88929c"
+      lightGrey: "#88929c",
+      mainBlue: "#4c748c"
     },
     fonts: ["sans-serif", "Roboto"],
     fontSizes: {
@@ -49,9 +50,9 @@ export const GlobalStyle = createGlobalStyle`
   html {
     box-sizing: border-box;
     scroll-behavior: smooth;
-    font-family: 'Open Sans', sans-serif, Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 16px;
     color: '#1a202c';
+    font-size: 18px;
+
   }
   body {
     position: relative;
@@ -59,29 +60,8 @@ export const GlobalStyle = createGlobalStyle`
     line-height: 1.5;
     letter-spacing: 0;
     background-color: white;
+
     color: ${theme.colors.darkGrey};
   }
 
-  h1, h2, h3 {
-    font-family: 'Poppins', sans-serif;
-  }
-
-  h1, h2 {
-    font-size: ${theme.fontSizes.large};
-    letter-spacing: .5rem;
-    text-transform: uppercase;
-    font-weight: bold;
-  }
-
-  h2 {
-    display: inline;
-    font-size: 1.75rem;
-    letter-spacing: .25rem;
-    padding: .25rem;
-    background: linear-gradient(180deg, rgba(255,90,95, 0) 0%, rgba(255,90,95, 0) 50%, rgba(255,90,95, 1) 50%, rgba(255,90,95, 1) 100%);
-  }
-
-   h3 {
-      font-size: ${theme.fontSizes.medium};
-  }
 `

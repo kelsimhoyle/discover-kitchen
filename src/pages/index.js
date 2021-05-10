@@ -31,7 +31,7 @@ const IndexPage = ({ data }) => {
 
 export const HomeQuery = graphql`{
   services: allAirtable(
-    filter: {table: {eq: "Site Data"}, data: {page: {in: "Services"}, function: {in: "Services List"}}}
+    filter: {table: {eq: "Site Data"}, data: {page: {in: "Home"}, function: {in: "Services List"}}}
   ) {
     edges {
       node {
@@ -39,7 +39,11 @@ export const HomeQuery = graphql`{
         data {
           name
           page
-          content
+          content {
+            childMarkdownRemark {
+              html
+            }
+          }
           image {
             localFiles {
               childImageSharp {
@@ -61,23 +65,25 @@ export const HomeQuery = graphql`{
       node {
         id
         data {
+          name
+          page
+          content {
+            childMarkdownRemark {
+              html
+            }
+          }
           image {
             localFiles {
               childImageSharp {
                 gatsbyImageData(
-                  width: 500
-                  height: 500
+                  width: 600
+                  height: 700
                   placeholder: BLURRED
                   transformOptions: {fit: COVER, cropFocus: CENTER}
                 )
               }
             }
           }
-          available
-          category
-          featured
-          item
-          description
         }
       }
     }

@@ -1,4 +1,5 @@
 @charset "utf-8";
+@import url('https://fonts.googleapis.com/css2?family=Abel&display=swap');
 
 .footer-img {
     height: 200px;
@@ -85,10 +86,17 @@
   }
   
   
-
 // If need, change your variables before importing Bulma
-$title-color: #ff0000;
+$title-color: #4c748c;
 $link: $title-color;
 $navbar-item-img-max-height: 3.5rem;
+$family-primary: 'Abel', sans-serif;
+$size-normal: 1.1rem;
+$body-font-size: 1.1em;
+
 
 @import "~bulma/bulma.sass";
+
+p {
+  margin: 1rem;
+}

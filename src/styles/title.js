@@ -10,13 +10,13 @@ const Text = styled.div`
     }
 
     h2 {
-    color: ${props => props.theme.colors.red};
-    border-bottom: 5px solid ${props => props.theme.colors.red};
+    color: ${props => props.theme.colors.mainBlue};
+    border-bottom: 5px solid ${props => props.theme.colors.mainBlue};
     font-size: 2rem;
     font-weight: bold;
     letter-spacing: 2px;
     text-align: center;
-    padding: .5rem 1rem;
+    padding: .25rem 1rem;
   }
 `;
 const Title = ({ title, subtitle }) => {

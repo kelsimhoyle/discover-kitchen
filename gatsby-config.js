@@ -46,7 +46,7 @@ module.exports = {
           {
             baseId: process.env.AIRTABLE_BASE_ID,
             tableName: "Site Data",
-            mapping: { "image": "fileNode" }
+            mapping: { "image": "fileNode", "content": "text/markdown" }
           },
         ]
       }
