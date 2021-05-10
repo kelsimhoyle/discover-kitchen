@@ -42,7 +42,7 @@ const Services = ({ data }) => {
                 {icons[step.node.data.name]}
                 <div className="m-2 is-size-5"
                 dangerouslySetInnerHTML={{
-                    __html: step.node.data.content.childMarkdownRemark.html,
+                    __html: step.node.data.content.childMarkdownRemark.html
                   }} />
               </div>
             ))}
