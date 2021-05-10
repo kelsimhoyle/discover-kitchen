@@ -6,7 +6,7 @@ const CardsComponent = ( { title, items, url }) => {
 
     return (
         <div className="section is-medium is-desktop">
-            <h3 className="title">{title}</h3>
+            <h3 className="title has-text-centered">{title}</h3>
             <div className="columns">
                 {items.map(item => (
                     
@@ -15,7 +15,7 @@ const CardsComponent = ( { title, items, url }) => {
                         title={item.node.data.name}
                         image={item.node.data.image}
                         alt={item.node.data.name}
-                        blurb={item.node.data.content}
+                        content={item.node.data.content}
                         sectionName={title}
                     />
                 ))}

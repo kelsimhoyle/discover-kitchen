@@ -29,7 +29,7 @@ const Services = ({ data }) => {
               title={service.node.data.name}
               image={service.node.data.image.localFiles[0]}
               alt={service.node.data.name}
-              blurb={service.node.data.content}
+              content={service.node.data.content}
               key={service.node.id}
             />
           ))}
@@ -40,7 +40,10 @@ const Services = ({ data }) => {
             {steps.map(step => (
               <div className="column box has-text-centered m-3">
                 {icons[step.node.data.name]}
-                <p className="m-2 is-size-5">{step.node.data.content}</p>
+                <div className="m-2 is-size-5"
+                dangerouslySetInnerHTML={{
+                    __html: step.node.data.content.childMarkdownRemark.html,
+                  }} />
               </div>
             ))}
 
@@ -65,13 +68,18 @@ const Services = ({ data }) => {
 export const ServicesQuery = graphql`{
   services: allAirtable(
     filter: {table: {eq: "Site Data"}, data: {page: {in: "Services"}, function: {in: "Services List"}}}
+    sort: {fields: data___name}
   ) {
     edges {
       node {
         id
         data {
           name
-          content
+          content {
+            childMarkdownRemark {
+              html
+            }
+          }
           image {
             localFiles {
               childImageSharp {
@@ -90,18 +98,24 @@ export const ServicesQuery = graphql`{
   }
   steps: allAirtable(
     filter: {table: {eq: "Site Data"}, data: {page: {in: "Services"}, function: {in: "Steps"}}}
+    sort: {fields: data___name}
   ) {
     edges {
       node {
         id
         data {
           name
-          content
+          content {
+            childMarkdownRemark {
+              html
+            }
+          }
         }
       }
     }
   }
-}`
+}
+`
 
 
 export default Services;

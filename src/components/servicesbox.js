@@ -1,7 +1,7 @@
 import React from "react";
 import { GatsbyImage, getImage } from "gatsby-plugin-image";
 
-const ServicesBox = ({ title, image, alt, blurb }) => {
+const ServicesBox = ({ title, image, alt, content }) => {
     return (
 
 
@@ -10,10 +10,12 @@ const ServicesBox = ({ title, image, alt, blurb }) => {
             <GatsbyImage
                 image={getImage(image)}
                 objectPosition="50% 50%"
-                alt={alt}
+                alt={title}
             />
-
-            <p className="is-size-6 m-5"> {blurb} </p>
+            <div className="m-5"
+                dangerouslySetInnerHTML={{
+                    __html: content.childMarkdownRemark.html,
+                }} />
         </div>
 
     )

@@ -12,7 +12,11 @@ const Landing = () => {
             airtable(data: {page: {eq: "Home"}, name: {eq: "Main About"}}) {
               id
               data {
-                content
+                content {
+                    childMarkdownRemark {
+                        html
+                      }
+                }
               }
             }
           }
@@ -50,9 +54,11 @@ g                        objectFit="cover"
                     />
                 </div>
             </StyledLanding>
-            <div className="section is-medium has-text-centered	mx-6">
-                <p className="is-size-4"> {data.airtable.data.content} </p>
-            </div>
+            <div className="section is-medium has-text-centered	mx-6 is-size-4"
+            dangerouslySetInnerHTML={{
+                __html: data.airtable.data.content.childMarkdownRemark.html,
+              }}
+            />
         </>
         )} />
        
