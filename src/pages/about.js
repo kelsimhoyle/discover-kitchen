@@ -19,7 +19,8 @@ const About = ({ data }) => {
             <div
               dangerouslySetInnerHTML={{
                 __html: data.main.data.content.childMarkdownRemark.html
-              }} />
+              }}
+            />
             <GatsbyImage image={getImage(data.signature.data.image.localFiles[0])} alt="Sarah Kerr Signature" />
           </div>
 
