@@ -8,7 +8,7 @@ module.exports = {
   siteMetadata: {
     title: `Discover Kitchen`,
     description: `Personal chef and small event catering in Denver, Colorado`,
-    keywords: ["Denver", "Colorado", "personal chef", "event catering", "meal prep", "dinner party", "date night", "dinner", "cook"],
+    keywords: ["Denver", "Colorado", "personal chef", "event catering", "meal prep", "dinner party", "date night", "dinner", "cook", "paleo", "step by step", "meal prep picture", "vegetarian", "keto meal prep", "dairy free meal prep", "high protein meal prep", "denver meal prep", "denver personal chef" ],
     image: "/images/DiscoverKitchen.png",
     siteUrl: `https://discoverkitchen.gatsbyjs.io/`,
     favicon: "/images/favicon.png"
@@ -60,7 +60,8 @@ module.exports = {
         policy: [
         {
           userAgent: "*",
-          disallow: "/",
+          allow: "/",
+          disallow: "/update"
         }]
       }
     },
