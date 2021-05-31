@@ -11,8 +11,9 @@ const links = {
         "Menu",
     ],
     more: [
-        "FAQs",
-        "Contact"
+        "Contact",
+        "FAQ"
+
     ]
 }
 
@@ -22,44 +23,45 @@ const Footer = () => {
         <>
 
             <footer className="footer">
-                <div className="columns has-text-centered is-justify-content-space-between is-centered">
-                    <div className="column is-one-fifth">
-                        <img src={K} alt="Discover Kitchen" className="footer-img px-6" />
-                    </div>
-       
-                            <div className="column is-flex-direction-column is-align-items-center is-one-fifth is-offset-one-fifth">
-                                <h4 className="title is-size-5">Navigation</h4>
-                                <ul>
-                                    {links.navigation.map(link => (
-                                        <li>
-                                            <Link to={`${link === "Home" ? "/" : `/${link.toLowerCase()}`}`} className="p-3">
-                                                {link}
-                                            </Link>
-                                        </li>
-                                    ))}
-                                </ul>
-                            </div>
-                            <div className="column is-flex-direction-column is-align-items-center is-one-fifth">
+                <div class="content">
+                    <div className="columns has-text-centered is-justify-content-space-between is-centered mx-6">
+                        <div className="column is-one-fifth">
+                            <img src={K} alt="Discover Kitchen" className="footer-img" />
+                        </div>
+
+                        <div className="column is-flex-direction-column is-align-items-center is-one-fifth is-offset-one-fifth">
+                            <h4 className="title is-size-5">Navigation</h4>
+                            <ul>
+                                {links.navigation.map(link => (
+                                    <li>
+                                        <Link to={`${link === "Home" ? "/" : `/${link.toLowerCase()}`}`} className="p-3">
+                                            {link}
+                                        </Link>
+                                    </li>
+                                ))}
+                            </ul>
+                        </div>
+                        <div className="column is-flex-direction-column is-align-items-center is-one-fifth">
                             <h4 className="title is-size-5">Learn More</h4>
                             <ul>
                                 {links.more.map(link => (
                                     <li>
-                                    <Link to={`/${link.toLowerCase()}`} className="p-3">
-                                        {link}
-                                    </Link>
-                                </li>
+                                        <Link to={`/${link.toLowerCase()}`} className="p-3">
+                                            {link}
+                                        </Link>
+                                    </li>
                                 ))}
                             </ul>
 
-</div>
-                            <div className="column is-one-fifth">
-                                <h4 className="title is-size-5">Let's Connect!</h4>
-                                <div className="is-flex-direction-column	">
-                                    <ContactItems footer={true} />
-                                </div>
+                        </div>
+                        <div className="column is-one-fifth">
+                            <h4 className="title is-size-5">Let's Connect!</h4>
+                            <div className="is-flex-direction-column	">
+                                <ContactItems footer={true} />
                             </div>
                         </div>
-
+                    </div>
+                </div>
             </footer>
         </>
     )
