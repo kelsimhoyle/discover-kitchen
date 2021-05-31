@@ -8,9 +8,9 @@ module.exports = {
   siteMetadata: {
     title: `Discover Kitchen`,
     description: `Personal chef and small event catering in Denver, Colorado`,
-    keywords: ["Denver", "Colorado", "personal chef", "event catering", "meal prep", "dinner party", "date night", "dinner", "cook", "paleo", "step by step", "meal prep picture", "vegetarian", "keto meal prep", "dairy free meal prep", "high protein meal prep", "denver meal prep", "denver personal chef" ],
+    keywords: ["Denver", "Colorado", "personal chef", "event catering", "meal prep", "dinner party", "date night", "dinner", "cook", "paleo", "step by step", "meal prep picture", "vegetarian", "keto meal prep", "dairy free meal prep", "high protein meal prep", "denver meal prep", "denver personal chef"],
     image: "/images/DiscoverKitchen.png",
-    siteUrl: `https://discoverkitchen.gatsbyjs.io/`,
+    siteUrl: `https://discoverkitchen.net/`,
     favicon: "/images/favicon.png"
   },
   plugins: [
@@ -48,6 +48,11 @@ module.exports = {
             tableName: "Site Data",
             mapping: { "image": "fileNode", "content": "text/markdown" }
           },
+          {
+            baseId: process.env.AIRTABLE_BASE_ID,
+            tableName: "FAQ",
+            mapping: { "Answer": "text/markdown" }
+          },
         ]
       }
     },
@@ -58,11 +63,11 @@ module.exports = {
         host: `https://discoverkitchen.gatsbyjs.io`,
         sitemap: `https://discoverkitchen.gatsbyjs.io/sitemap.xml`,
         policy: [
-        {
-          userAgent: "*",
-          allow: "/",
-          disallow: "/update"
-        }]
+          {
+            userAgent: "*",
+            allow: "/",
+            disallow: "/update"
+          }]
       }
     },
     {
