@@ -7,6 +7,8 @@ const addContact = (data) => {
 
     if (data.services) {
         postData.services = data.services.join(", ");
+    } else {
+      data.services = "";
     }
 
     base('Contact Requests').create([
@@ -14,6 +16,7 @@ const addContact = (data) => {
           "fields": postData
         }
       ], function(err, records) {
+        console.log(records)
         if (err) {
           console.error(err);
           return false;
